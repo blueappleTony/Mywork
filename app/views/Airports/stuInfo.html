@@ -1,0 +1,51 @@
+#{extends 'main.html' /}
+#{set title:'stuInfo.html' /}
+
+<style type="text/css">
+	table.tableizer-table {
+	border: 1px solid #CCC; font-family: Arial, Helvetica, sans-serif
+	font-size: 12px;
+} 
+.tableizer-table td {
+	padding: 4px;
+	margin: 3px;
+	border: 1px solid #ccc;
+}
+.tableizer-table th {
+	background-color: #104E8B; 
+	color: #FFF;
+	font-weight: bold;
+}
+</style>
+<table class="tableizer-table">
+	<tr class="tableizer-firstrow">
+		<th>姓名</th>
+		<th>性别</th>
+		<th>电话</th>
+		<th>Email</th>
+		<th>学校</th>
+		<th>专业</th>
+		<th>到达机场</th>
+		<th>航班</th>
+		<th>到达时间</th>
+		<th style="width:150px;">行李</th>
+		<th style="width:150px;">备忘</th>
+	</tr>
+	#{list items:stu,as:'students'}
+ 	<tr>
+ 		<td>${students.name}</td>
+ 		<td>${students.gender}</td>
+ 		<td>${students.phone}</td>
+ 		<td>${students.email}</td>
+ 		<td>${students.school}</td>
+ 		<td>${students.major}</td>
+ 		<td>${students.airport}</td>
+ 		<td>${students.flight}</td>
+ 		<td>${students.date}</td>
+ 		<td style="width:150px;">${students.luggage}</td>
+ 		<td style="width:150px;">${students.remarks}</td>
+ 	</tr>
+ 	#{/list}
+</table>
+
+

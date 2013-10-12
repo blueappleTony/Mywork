@@ -1,0 +1,36 @@
+#{extends 'main.html' /}
+ 
+<html>
+    <head>
+        <title>Application error</title>
+       	
+    </head>
+    <body>
+          #{if play.mode.name() == 'DEV'}
+            #{500 exception /}
+        #{/if}  
+   <img alt="" src="@{'public/images/500.png'}" style="margin-left: 29%;margin-top: 7%;margin-bottom: 4%;">
+    
+   <p style="text-align: center;color:#5282a5;" ><span style="font-size:18px;" id="time_div">2</span></p>
+      <script>setTimeout("history.back()",3000)</script> 
+    <script type="text/javascript">
+	window.onload = function(){
+		showTime(1);
+	}
+	var seconds = 3;
+	function showTime(time)
+	{
+	               document.getElementById("time_div").innerHTML = seconds;
+		if(seconds >= 0)
+		{
+			seconds--;
+		}
+		else{
+			seconds = 3;
+			window.location.reload();
+		}
+		setTimeout("showTime()",1000);
+	}
+</script>
+</body>
+</html>

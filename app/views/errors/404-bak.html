@@ -1,0 +1,31 @@
+#{extends 'main.html' /}
+#{set title:'edit.html'/}
+<html>
+    <head>
+        <title>Not found</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=${_response_encoding}"/>    
+    </head>
+ 	<img alt="" src="@{'public/images/404.gif'}" style="margin-left:14%;">
+ 	 <p style="text-align: center;color:#5282a5;" ><span style="font-size:18px;" id="time_div">2</span>秒后自动返回上级页面...</p>
+      <script>setTimeout("history.back()",5000)</script> 
+    <script type="text/javascript">
+	window.onload = function(){
+		showTime(1);
+	}
+	var seconds = 5;
+	function showTime(time)
+	{
+	               document.getElementById("time_div").innerHTML = seconds;
+		if(seconds >= 0)
+		{
+			seconds--;
+		}
+		else{
+			seconds = 5;
+			window.location.reload();
+		}
+		setTimeout("showTime()",1000);
+	}
+</script>
+   </body>
+</html>

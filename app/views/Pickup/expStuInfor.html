@@ -1,0 +1,21 @@
+#{extends 'main.html' /}
+<h1>信息导出成功</h1>
+
+
+<div>
+<h3>检索导出</h3>
+<h5>选择导出的学校</h5>
+<form>
+<select name="school">
+	#{list items:l,as:'s'}
+	     <option value="${s.id}">${s.name}</option>   
+    #{/list}
+</select> 
+<br/>
+
+<a>选择时间</a>
+
+<button type="button" href="@{userIfo.}" >导出</button> 
+</form>
+</div>
+<a href="@{userInfo.pickupIndex}" style="margin-left:20px;">返回</a>

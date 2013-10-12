@@ -1,0 +1,387 @@
+﻿@charset "utf-8";
+
+html {
+	color: #000;
+	background: #f3f3f3;
+}
+
+ 
+ 
+.biaoti {
+	float: left;
+	width: 320px;
+}
+
+ 
+.title-exit a {
+	color: #CCCCCC;
+}
+
+.left-div {
+	width: 700px;
+	float: left;
+}
+
+.activity-pic {
+	margin-left: 40px;
+	margin-top: 30px;
+	float: left;
+	width: 300px;
+	height: 220px;
+	max-height:220px;
+	overflow:hidden;
+}
+
+.activity-pic img {
+	width: 280px;
+}
+
+.activity {
+	float: left;
+	margin-left: 20px;
+	margin-top: 30px;
+	height: 200px;
+	width: 320px;
+}
+
+.activity-weight {
+	width: 420px;
+}
+
+.activity-weight span {
+	font-size: 20px;
+	font-weight: bold;
+	line-height: 1.5;
+}
+
+.detail {
+	font-size: 12px;
+}
+
+.num {
+	color: #73ADC0;
+}
+
+.people {
+	color: #ccc;
+}
+
+.activity-introduction {
+	width: 400px;
+	margin-left: 35px;
+	font-size: 12px;
+}
+
+.activity-picture {
+	margin-left: 35px;
+	margin-top: 30px;
+}
+
+.activity-pics {
+	width: 550px;
+	height: 150px;
+}
+
+.activity-pics img {
+	float: left;
+}
+
+.activity-pics1 {
+	margin-left: 40px;
+}
+
+.discuss {
+	width: 450px;
+	margin-left: 40px;
+	margin-bottom: 40px;
+	position: relative;
+}
+
+.discuss textarea {
+	width: 450px;
+}
+
+.discuss span {
+	float: right;
+	font-size: 12px;
+	color: b5b5b5;
+}
+
+.discuss-div {
+	padding-top: 30px;
+	border-top: 1px dashed #e0e0e0;
+	height: 80px;
+	width: 485px;
+}
+
+.discuss-div2 {
+	width: 450px;
+	margin-left: 40px;
+}
+
+.discuss-div3 {
+	float: left;
+	text-align: center;
+}
+
+.discuss-div3 img {
+	margin-right: 15px;
+}
+
+.discuss-div4 {
+	float: left;
+	margin-left: 5px;
+}
+
+.discuss-div5 {
+	margin-top: 27px;
+	font-size: 13px;
+}
+
+.review {
+	margin-bottom: 20px;
+	margin-left: 450px;
+	color: #7b7b7b;
+	font-size: 13px;
+}
+
+.right {
+	float: left;
+	width: 324px;
+}
+
+.right-top {
+	float: left;
+	width: 324px;
+}
+
+.faqi {
+	margin-top: 30px;
+}
+
+.top {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.list1 {
+	font-weight: bold;
+}
+
+.content {
+	margin-left: auto;
+	margin-right: auto;
+	width: 1150px;
+	margin-top: 30px;
+}
+
+.pic-leftTitle {
+	color: #7b7b7b;
+}
+
+.btn-info {
+	background-image: linear-gradient(to bottom, #5282a5, #2f96b4);
+	background-color: #5282a5;
+	padding-left: 24px;
+	padding-right: 24px;
+}
+ 
+
+.activity-title1,.activity-title3,.activity-title4 {
+	color: #73ADC0;
+	font-weight: normal;
+}
+
+.activity-title4 {
+	display: inline;
+}
+
+.activity-title {
+	color: #73ADC0;
+	margin-left: 40px;
+	font-weight: normal;
+}
+
+.discuss-NO {
+	font-size: 12px;
+	color: b5b5b5;
+}
+
+.content-p {
+	margin: 20px 0px;
+}
+
+.list {
+	height: 370px;
+	width: 320px;
+	background-color: white;
+	padding: 15px;
+	float: left;
+	margin-top: 10px;
+}
+
+.pic {
+	height: 36px;
+	width: 36px;
+	float: left;
+}
+
+.activity-userpic {
+	float: left;
+}
+
+.organizer-sex {
+	font-size: 12px;
+	margin-left: 10px;
+}
+
+.inline {
+	color: #ccc;
+	font-size:12px;
+}
+
+.activity-guanzhu {
+	margin-left: 45px;
+}
+
+.canyuNO,.guanzhuNO {
+	color: #73ADC0;
+	font-size: 12px;
+}
+
+.canyuNO {
+	margin-left: 60px;
+}
+
+.canyu1 {
+	color: #ccc;
+	font-size: 12px;
+}
+
+.numbers {
+	margin-top: 40px;
+}
+
+.nav {
+	padding: 5px;
+}
+
+.list2 {
+	height: 350px;
+	width: 230px;
+	background-color: #e0e0e0;
+	padding: 10px;
+	float: left;
+	margin-left: 10px;
+	margin-bottom: 15px;
+}
+
+.user-name {
+	color: #0078b6;
+	font-size: 13px;
+	float: left;
+}
+
+.user-time {
+	float: left;
+	margin-left: 220px;
+	font-size: 13px;
+	color: #7b7b7b;
+	position: absolute;
+}
+
+a:hover,a:focus {
+	text-decoration: none;
+}
+
+.span1 {
+	margin-left: 0px;
+	margin-right: 15px;
+	padding-right: 0px;
+	border: 0px;
+	margin-top: 10px;
+	background-color: #5681A1;
+	font-size: 12px;
+	color: #fff;
+}
+
+.map a {
+	font-size: 12px;
+	color: #ccc;
+	float: right;
+	margin-top: 20px;
+	margin-right: 35%;
+}
+
+.map b {
+	margin-top: 20px;
+	font-size: 20px;
+	color: #73ADC0;
+	float: left;
+}
+
+.map img {
+	margin-top: 20px;
+}
+
+.person {
+	margin-top: 40px;
+}
+
+.button2 {
+	margin-bottom: 40px;
+}
+
+.person img {
+	margin-top: 10px;
+}
+
+.person .star {
+	margin-top: 0px;
+}
+
+.f1 {
+	color: #ccc;
+	font-size: 12px;
+}
+
+.name {
+	margin-top: 60px;
+	padding-left: 5px;
+}
+
+.person .icon {
+	color: #ccc;
+	font-size: 12px;
+	margin-top: 10px;
+}
+
+.person a {
+	color: #ccc;
+}
+
+.bottom-list {
+	color: white;
+}
+
+.bottom_pic {
+	margin-top: 8px;
+	margin-left: 10px;
+}
+
+#bottom-nav {
+	margin-left: 30%;
+}
+
+.container-fluid {
+	background-color: #5282a5;
+	 
+}
+
+.list3 {
+	color: white;
+}
+
+.navbar-inverse .brand,.navbar-inverse .nav>li>a {
+	color: #FFFFFF;
+}

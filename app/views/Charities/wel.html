@@ -1,0 +1,209 @@
+#{extends 'main.html' /}
+#{set title:'wel.html'/}
+ #{set 'Styles'}
+ <link rel="stylesheet" href="@{'/public/stylesheets/wel.css'}" />
+ #{/set}
+ 
+
+		
+		<!--这里是内容-->
+<div class="">
+	<div class="form-horizontal">
+			<div class="control-group ">
+					  <h4 class="gy-title">公益活动</h4>
+					
+			 </div> 
+			 	#{if isAdmin }
+			 		<h4><a  class="gy-fb" href="@{Charities.fabu()}">发布</a></h4>
+				 
+				 #{/if}
+			 
+			 	#{list items :we,as:'ac'}
+			 
+			   <div class="b-1">
+			 
+			   	
+					<h3 class="h3"><a class="goy-h3" href="@{Charities.welfare(ac.id)}">${ac.title}</a></h3>
+				 	
+				 	
+					<a href="@{Charities.welfare(ac.id)}"> <img src="${ac.f}" class="b-pic"/></a>
+					
+					 	
+			 
+					   
+							 
+								 <div class="goy-3"> 
+								  	<span class="goy-a">${ac.generalize}</span>
+								 </div>		
+							 <div class="goy-4">
+						 
+							 	<span class="link">${ac.time}更新 </span>
+							 
+							 <span class="goy-6">
+								 	<a class="link" href="@{charities.like(ac.id,pageNo)}"> +关注活动(<span style="color:red;font-size:14px;">${ac.likerCount}</span>) </a>
+							 	</span>
+								 		
+				 	#{if isAdmin }
+				 	  	<a href="@{Charities.edit(ac.id,pageNo)}">编辑</a>
+					 	<a href="@{Charities.del(ac.id,pageNo)}">删除</a>
+				  			 #{/if}					
+						 	</div>
+						 
+					 
+			  </div>
+				
+			 	<div class="float-1"></div>
+				
+					#{/list}
+			
+
+			 
+		 
+	  	#{if pageCount!=1}
+			  <div class="pagination">
+						<ul>
+							<li>
+									<a href="@{Charities.pigination(1)}" class="paging">首页</a>
+								</li>
+						 
+								<li >
+									<a href="@{Charities.pigination(pageNo-1 )}" pagenum="${pageNo}"   id="shangyiye" class="paging">上一页</a>
+								</li>
+						  		#{list items:1..pageCount,as:'page'}
+								<li class="panduan" >
+									<a href="@{Charities.pigination(page)}"  class="paging  ${pageNo==page?"now_page":""} "   id="page_gy"  >${page}</a>
+								</li>
+								
+								#{/list}
+						 	<li>
+									<a href="@{Charities.pigination(pageNo+1 )}" id="xiayiye" pageNumber="${pageCount}"  class="paging">下一页</a>
+								</li>
+							   
+								<li>
+									<a href="@{Charities.pigination(pageCount)}" class="paging">末页</a>
+								</li>
+							</ul>
+								
+					</div>
+				 #{/if}
+	 	 
+	</div>	
+ 			
+ 	
+	<!--右边部分-->
+ 		<!-- <div class="wr">
+		 
+				 
+					<h3>公益人物</h3>
+				 
+		 
+			
+			<div class=" userinforcontent1">
+						<div class=" userinforleft">
+							 
+								<img src="../../../public/images/head-1.png" class="right-pic" >
+								<div class="wr-1">
+								<a class="welname" >刘纯阳</a>
+								</div>
+						 
+						</div>
+					 
+							<label class="b-5"  >
+								 
+									<img src="../../../public/images/public_heart.png">
+									<a class="link">521</a>
+							 
+							</label>
+						<div class="float-1"></div>
+			</div>
+			
+			
+		
+			<div class=" userinforcontent1">
+						<div class=" userinforleft">
+							 
+								<img src="../../../public/images/head-1.png" class="right-pic" >
+								<div class="wr-1">
+								<a class="welname" >刘纯阳</a>
+								</div>
+						 
+						</div>
+					 
+							<label class="b-5"  >
+								 
+									<img src="../../../public/images/public_heart.png">
+									<a class="link">521</a>
+							 
+							</label>
+						<div class="float-1"></div>
+			</div>
+			
+			
+			
+		
+			<div class=" userinforcontent1">
+						<div class=" userinforleft">
+							 
+								<img src="../../../public/images/head-1.png" class="right-pic" >
+								<div class="wr-1">
+								<a class="welname" >刘纯阳</a>
+								</div>
+						 
+						</div>
+					 
+							<label class="b-5"  >
+								 
+									<img src="../../../public/images/public_heart.png">
+									<a class="link">521</a>
+							 
+							</label>
+						<div class="float-1"></div>
+			</div>
+	 
+			
+			 
+	</div>
+  -->
+ 
+ 
+ 
+ 
+ 
+	<div class="float-1"></div>
+
+</div>
+	
+ 	
+		<!--这里是底部-->
+	
+		#{set 'Scripts'}
+<script type="text/javascript">
+ 
+ $(document).ready(function(){
+	 
+	 
+	 
+	 
+	 
+	 
+	if($("#shangyiye").attr("pagenum")==1){
+		$("#shangyiye").addClass("hide");
+	} 
+	
+	if($("#xiayiye").attr("pageNumber")==${pageNo}){
+		$("#xiayiye").addClass("hide");
+	} 
+	
+	  $(".paging").click(function(){
+		//var s = $(this).attr("number").val();
+			//alert($(this).attr("number"));
+		 
+
+	});
+	 
+
+	
+	
+	});  
+  </script>		
+ 	#{/set}

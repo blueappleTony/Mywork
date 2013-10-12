@@ -1,0 +1,113 @@
+#{set title:'userAddSuccess.html' /}
+<!DOCTYPE>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<link rel="stylesheet" href="../public/stylesheets/bootstrap.css" />
+	<link rel="stylesheet" href="../public/stylesheets/main.css" type="text/css" >
+	<link rel="stylesheet" href="../public/stylesheets/optitle.css" type="text/css" >
+	<link rel="stylesheet" href="../public/stylesheets/bootstrap.min.css" type="text/css" >
+	<link rel="stylesheet" href="../public/stylesheets/bootstrap-responsive.css" type="text/css" >
+	<link rel="stylesheet" href="../public/stylesheets/bootstrap-responsive.min.css" type="text/css" >
+	<link rel="stylesheet" href="../public/stylesheets/style.css" type="text/css" >
+	<script type="text/javascript" src="..public/javascript/jquery.js"></script>
+	<script type="text/javascript" src="..public/javascript/opporlink.js"></script>
+	<script src="@{'/public/javascripts/jquery.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+	<script src="@{'/public/javascripts/opporlink.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style type="text/css"></style>
+</head>
+
+<body>
+	<div class="opporbody">
+	
+		<!-- 这里是标题-->
+		<div class="maintitle" style="text-align:center;">
+			<div class="touConten">
+					<div  style="float:left; width:270px;">
+						<img class="opporlinklog" src="../public/images/logo_.png">
+					</div>		
+					<div class="biaoti" style="float:left; width:320px;">
+						<ul class="nav nav-pills" style="width:650px;">
+							<li >
+							<a href="@{Application.index}" class="biaotifont">首页</a></li>
+							<li >
+							<a href="@{userInfo.pickupIndex}" class="biaotifont">新生接机</a></li>
+							<li >
+							<a href="#" class="biaotifont">活动</a></li>
+							<li >
+							<a href="#" class="biaotifont">问答</a></li>
+							<li >
+							<a href="#" class="biaotifont">公益</a></li>
+						</ul>
+					</div>
+					
+					<div class="titleSearch "  style="float:left; padding-top:8px;">
+						<form >
+						  <div style="float:left; width:210px;">
+								<input class="span2 titleinput"  type="text" placeholder="搜索感兴趣的活动、话题或人...">
+						  </div>
+						  <div style="float:left; padding-top:15px;"> 
+							<button type="button" style="width:35px; height:30px; background-color:#4b7390;" >
+								<img src="../public/images/search.png">
+							  </button>
+						  </div>
+						</form>
+					</div>
+					<div style="float:left; padding-left:20px; padding-top:25px;">
+					  <a style="color:#FFFFFF;"> 你好，刘纯阳</a>
+					</div>
+				
+					<div  style="float:left; padding-left:30px; padding-top:25px;">
+					  <a style="color:#CCCCCC;"> 退出</a>
+					</div>
+			</div>
+		</div>
+		
+		
+		<!--这里是内容-->
+	<div class="opporcontent" style="margin-top:50px; height:400px;">
+		<div style="text-align:center; width:1024px; margin-top:70px;">
+			<label><a><img src="../public/images/ok.png" ></a><a style="margin-left:10px;">您好。您已建立接机所需服务，信息添加成功！</a></label>
+		</div>
+		
+		<div style="text-align:center; width:1024px; margin-top:10px;">
+			<label>
+						<a>温馨提示:</a>
+						<a>您可以点击</a>
+						<a href="@{userInfo.detail(id)}" style="color:#000">查看</a>
+						<a>或者</a>
+						<a href="@{userInfo.changePuUserInfo(id)}" style="color:#000" >修改</a>
+						<a>信息</a>
+			</label>
+		</div>
+		
+			
+	</div>
+		
+		
+		<!--这里是底部-->
+		<div class="opporlinkbottom" style="margin-top:6%;">
+			<div class="diConten">
+				<div style="float:left; padding-top:5px; padding-left:235px;">
+					<span ><a style="font-family:Arial;font-size:14px;color:#FFFFFF;">@2013 opporlink 奥噗</a></span>
+				</div>
+				<div style="float:left; padding-top:5px; padding-left:160px;">
+					<span ><a style="font-family:Arial;font-size:14px;color:#FFFFFF;">关于我们 加入奥噗</a></span>
+				</div>
+				<div style="float:left; padding-top:5px; padding-left:200px;">
+					<span >
+							<img src="../public/images/share_facebook.png">
+							<img src="../public/images/share_google+.png">
+							<img src="../public/images/share_twitter.png">
+							<img src="../public/images/share_weibo.png">
+					</span>
+				</div>
+			</div>
+		</div>
+		
+		
+	</div>
+</body>
+</html>

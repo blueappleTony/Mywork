@@ -1,0 +1,130 @@
+#{extends 'main.html' /}
+#{set title:'QuesIndex.html'/}
+<script type="text/javascript" src="../../../public/javascripts/allunivlist.js"></script>
+<script type="text/javascript" src="../../../public/javascripts/jquery-1.7.2.min.js"></script>
+ 	<script language="javascript" type="text/javascript">
+ 	    var school = "";
+		$(function (){
+			$.each(allUnivList,function (j,m){		
+				$("#gj").append("<a href='javascript:void(0);' style='margin: 8px;'  onclick='getSheng("+j+",\""+m.name+"\")'>"+m.name+"</a>");			
+			});
+		});
+		
+		//获得每个国家的省份
+		function getSheng(aid,name){
+		school = name;
+			$("#sheng").show();
+			$("#list").html('');
+			$("#sheng").html('');
+			if (allUnivList[aid].provs.length == 0){
+				$("#sheng").append("很抱歉！暂时没有数据（只提供了中国和美国的学校信息)");
+			}
+			else
+			{
+				$.each(allUnivList[aid].provs,function (j,m){				
+					$("#sheng").append("<a href='javascript:void(0);' style='margin: 10px;' onclick='getSchool("+aid+","+j+",\""+m.name+"\")'>"+m.name+"</a>");
+				});
+			}
+		}
+
+		//获得每个省份的学校
+		function  getSchool(gid,pid,name){
+		school = school.substring(0,2);
+		school += " - "+name;
+		$("#list").show();
+			$("#list").html('');
+			$.each(allUnivList[gid].provs[pid].univs,function (k,l){
+				$("#list").append("<a style='width:270px;display:block;float:left; margin:10px;'>"+l.name+"</a>");
+			});
+			$("#list").append("<br style='clear:both;' />");
+				
+		}
+		$("#list a").live("click",function (){
+			$("#gj").hide();
+			$("#list").hide();
+			$("#sheng").hide();
+			school += " - "+$(this).text();
+			$("#txtSc").val(school);
+		});
+		$("#txtSc").live("click",function (){
+			$("#gj").show();
+			$("#list").hide();
+			$("#sheng").hide();
+		});
+	</script>
+
+
+<div style="width:800px; border-right:1px solid #f4f4f4;">
+		<div style="width:735px;">
+			<p class="lead" style="padding-left:30px; padding-top:20px;">提问</p>
+		</div>
+	
+	<form class="form-horizontal"  id="QuesIndex" action="@{QuestAnsw.dispAddQues}"  method="post"  accept-charset="${_response_encoding}">
+	 	<div class="control-group input-right-w">
+			<label class="control-label">标题</label>
+			<div class="controls ">
+				<input type="text" name="title" value="${flash.title}"
+				 placeholder="请输入文章标题......" style="height:30px; width:540px;">
+			</div>
+		</div>
+		<div class=" control-group input-right-w" >
+			<label class="control-label">问题说明</label>
+				<div class=" controls" style="width:546px;">
+				<textarea id="content" name="content" value="${flash.content}"  style="width:540px;" rows="10" cols="20" ></textarea>
+	 		 </div>
+		 </div>
+		  
+		  <div class="control-group input-right-w">
+		  		<label class="control-label">选择学校</label>
+			  		<div class="controls ">
+			  			学校选填
+			  		</div>
+		  		
+		  </div>
+		   <div class="control-group input-right-w">
+		   		<div class="controls ">
+			   		<div style="width:560px; overflow:hidden;">
+						<input type="text" id="txtSc" style="width:532px; border:1px #cccccc solid; padding:10px; overflow:hidden; " 
+						name="school" value="${flash.school}" placeholder="请选择学校" />
+						<div id="gj" style="width:532px; border:1px #cccccc solid; padding:10px; overflow:hidden; line-height:25px; display:none;"></div>
+						<div id="sheng" style="width:532px; word-break:break-all; border:1px #cccccc solid; padding:10px; overflow:hidden; line-height:25px;display:none;"></div>
+						<div id="list" style="width:532px; border:1px #cccccc solid; padding:10px; overflow:hidden; line-height:25px;display:none; height:300px; overflow-y:auto;"></div>
+					</div>
+				 </div>
+			</div> 
+		 
+		 <div class="control-group input-right-w">
+			 <label class="control-label">选择标签</label>
+		 		<div class="controls" style="color:#e2e2e2;">
+		  			标签越精细，越容易让专业人士看到你的问题
+		  		</div>
+		  </div>
+		  
+		   <div class="control-group input-right-w">
+		  		
+		  		
+		  		 <div class="controls " style="width:594px;" id="ulname">
+				#{list items:t,as:'tag'}
+					<dd class="list-fy on" style="margin-left:-4px;">
+						<input type="checkbox"  class="" name="Tag" id="Tag"  value="${tag.tagName}" ${flash.Tag=="tag.id"?"checked":""} />
+						<a class="op-6">${tag.tagName} </a>
+				    </dd>
+				#{/list}
+			 </div>
+			 <span class="error">#{error 'q.label' /}</span>
+		  		
+		   </div>
+		  <div class="control-group input-right-w">
+		 	<div class="controls" id="ulname">
+					<input class="btn btn-large btn-primary" type="submit"/>
+					<input class="btn btn-large" type="reset" style="margin-left:30px;" />
+				 
+			 </div>
+		  </div>
+	</form>
+	<div style=" clear:both;"></div>
+</div>	
+
+ 
+
+          

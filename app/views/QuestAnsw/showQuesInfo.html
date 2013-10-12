@@ -1,0 +1,88 @@
+#{extends 'main.html' /}
+#{set title:'showQuesInfo.html' /}
+#{set 'Styles'}
+<link rel="stylesheet" href="/public/stylesheets/scrollpagination.css" />
+<link rel="stylesheet" href="/public/stylesheets/Activity-index.css"/>
+#{/}
+<div style="width:700px; float:left;">
+		 <div style="width:600px;">
+				#{list items:fQ,as:'findListQues'}
+				<ul style="border-bottom:1px solid #dddddd; padding-top:20px; padding-bottom:5px;"  >
+					<li  class="qatitle">	
+						<span  style="font-size:21px; color:#000000; font-family:'Helvetica Neue',Helvetica,Arial,Sans-serif'; font-weight:bold;">${findListQues.title}</span>
+					</li>
+				
+					<li class="qatitle">
+						<span class="qatitlea" >${findListQues.label}</span>
+					</li>
+					<li class="qatitle">
+						<span class="qatitlea" style="font-size:10px ; color:#336699; TEXT-DECORATION:none">${findListQues.username}，${findListQues.selfIntro}</span>
+					</li>
+				
+					<li class="qatitle" style="padding-bottom:25px;">
+						<span class="qatitlea"  style="TEXT-DECORATION:none">${findListQues.content.raw()}</span>
+					</li>
+					<li class="qatitle"   style="border-top:1px solid #dddddd;padding-bottom:10px;">
+						<span style="color:#336699">${findListQues.answerNum}</span>个回答
+					</li>
+			 	</ul>
+			 	#{/list}
+		  </div>
+		 
+		  <div style="  width:600px;">
+		 		#{list items:listCom,as:'ac'}
+			 		<ul style="border-bottom:1px solid #dddddd; padding-bottom:15px;">
+					 			<li class="qatitle">
+				    			<h5><span style="color:#336699;">${ac.username}：</span><span style="color:#336699;font-weight:bold;">${ac.userSelfIntro}</span></h5>
+				    		</li>
+				    		
+				    		<li class="qatitle" style="line-height:25px;margin-left: 39px;">
+				    			<span style="TEXT-DECORATION:none;" >${ac.comment.raw()}</span>
+				    		</li>
+		  	   	    </ul>
+		  	   #{/list}	
+	  	  </div> 		
+	  	   		
+
+  			
+	  		<div style="margin-left:20px;padding-bottom:50px; width:600px;">
+					 <li class="qatitle" style="padding-bottom:40px;color:#336699">
+					  ${comentUsername} ,回答问题
+					 </li>
+					 <form id="comments" action="@{QuestAnsw.addComent}" method="post">
+						 	#{list items:fQ,as:'findListQues'}
+						 		<input type="hidden"  id="quesid" name="quesid" value="${findListQues.id}" />
+							#{/list}
+					 		<textarea rows="5" style="width:570px;" id="comment" name="comment" value="${flash.comment}"></textarea>
+						 	<input type="submit" id="submitbutton" value="发布回答" class="btn btn-primary"  
+						 	style="width:80px;" />
+					 </form>
+			</div>
+	
+		
+</div>
+	 
+
+<div style="float:left;">
+   #{list items:fQ,as:'fidid'}
+	<div class="op-right1">
+		<a class="btn btn-primary" href="@{QuestAnsw.fcousOnQuestion(fidid.id)}" >关注问题</a>
+	</div>
+	<label class="op-17">
+		<span class="op-18">${fidid.focusNum}<span>
+		<span class="op-13">人已关注</span>
+		</span></span>
+	</label>
+	#{/list}
+	 <div>
+	  #{list items:FQ,as:'fidid'}
+	 	<img  src=${fidid.userprofile} class="op2-right2" style="height:60px; width:60px;">
+	  #{/list}
+	 </div> 
+	 
+</div>
+	 
+	 <div style=" clear:both;"></div>	
+
+
+

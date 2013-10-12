@@ -1,0 +1,489 @@
+.active {
+	background: #5883a3;
+	color: #FFF;
+	border-radius: 5px;
+	 
+}
+
+.selected {
+	background: #eee;
+	color: #005580
+}
+
+.sexdiv {
+	width: 60px;
+	height: 25px;
+	border-left: 1px solid #000000;
+	border-bottom: 1px solid #000000;
+	border-top: 1px solid #000000;
+	border-right: 1px solid #000000;
+	background: #FFFFFF;
+	text-align: center;
+}
+
+.sexnan {
+	margin-left: 20%;;
+	margin-top: 2%;
+	float: left;
+}
+
+checkboxnan {
+	margin-left: 20%;
+	margin-top: 5%;
+	float: left;
+}
+
+.welfareConbut {
+	margin-top: 27px;
+}
+
+.fl {
+	float: left;
+}
+
+.pick-inpu {
+	padding-top: 30px;
+}
+
+.pick-inpu-border {
+	padding-top: 10px;
+	border-top: 1px solid #f4f4f4;
+}
+
+.pick-inpu-text {
+	height: 40px !important;
+	width: 280px !important;
+}
+
+.malf {
+	text-align: right;
+	padding-top: 5px;
+	font-size: 14px;
+	width: 125px;
+}
+
+.malfinput {
+	margin-left: 25px;
+}
+
+.malffont {
+	margin-left: 25px;
+	padding-top: 8px;
+}
+
+.pick-inpu-tarea {
+	width: 280px;
+}
+
+.pfc {
+	color: #5883a3;
+	text-decoration: none !important;
+}
+
+.pfcolor {
+	color: #9d9d9d;
+	text-decoration: none !important;
+}
+
+.list-fy {
+	 
+	white-space: nowrap;
+	padding: 0 6px;
+	float: left;
+	position: relative
+}
+
+.list-fy a {
+	margin-left: 20px;
+}
+
+.list-fy1 {
+	white-space: nowrap;
+	 margin-left:50px;
+}
+
+.quanbu {
+	margin-left: 30px;
+}
+
+.All {
+	float: left;
+	width: 91;
+	height: 22;
+}
+
+.quanbu2 {
+	margin-left: 55px;
+}
+
+.quanbu,.quanbu2 {
+	background-color: #5883a3;
+	border-radius: 5px;
+	color: white;
+	font-size: 12px;
+	padding: 0 3px;
+}
+
+.dt {
+	font-weight: none;
+}
+
+address,caption,cite,code,dfn,em,strong,th,var {
+	font-style: normal;
+	font-weight: normal;
+}
+
+li {
+	list-style: none
+}
+
+a {
+	color: #000;
+	text-decoration: none;
+	outline: 0;
+	cursor: pointer
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+.fenlei {
+	width: 50px;
+	color: black;
+}
+
+.classify,.classify-channel {
+	border: 1px solid #d8d8d8;
+	margin: 0 auto;
+	padding: 15px 0;
+	margin: 20px auto 10px;
+	background: #FFF;
+	width: 1024px;
+	border-width: 0px;
+}
+
+.classify-dl,.classify-more {
+	position: relative;
+	padding: 0 0 10px 45px;
+	font-size: 12px;
+	line-height: 20px;
+ 
+}
+
+.classify .list-tit,.classify-channel .list-tit {
+	height: 20px;
+	color: black;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 70px;
+	margin-left: 20px;
+}
+
+.NO1 {
+	border: 1px solid #d8d8d8;
+}
+
+.activitys {
+	color: #a8a8a8
+}
+
+.classify-more .list-tit {
+	left: -45px
+}
+
+.classify-third .list-tit {
+	left: -55px
+}
+
+.classify-more .list-more,#city_swich .city_nav a.jiao,.dressing a {
+	background-image: url(../img/pdlistui.jpg);
+	no-repeat
+}
+
+.dressing-top {
+	border: 1px solid #d8d4d5;
+	margin-top: 0
+}
+
+.dressing li {
+	float: left;
+	font-size: 12px;
+	color: #666;
+	line-height: 24px;
+	line-height: 22px;
+	line-height: 22px
+}
+
+.dressing .sales {
+	background-position: -6 -189px;
+	width: 43px;
+	padding: 3 29px 9 6;
+}
+
+.dressing .sales1 {
+	background-position: -4 -270px;
+	width: 43px;
+	padding: 3 29px 9 8;
+}
+
+.activity-address {
+	width: 802px;
+	float: left;
+}
+
+.address {
+	color: #5883a3;
+}
+
+.activity-div {
+	width: 247px;
+	background-color: #FFFFFF;
+	padding-top: 10px;
+	margin-left: 15px;
+	float: left;
+	position: relative;
+}
+
+.activity-pic {
+	margin-bottom: 10px;
+}
+
+.activity-title {
+	font-size: 18px;
+	color: red;
+}
+
+.activity-title1 {
+	font-size: 18px;
+	color: #0b8abe;
+}
+
+.activity-title3 {
+	font-size: 18px;
+	color: #0b8abe;
+}
+
+.activity-organizers {
+	margin-top: 30px;
+	font-size:12px;
+	color: #7b7b7b;
+}
+
+.detailed {
+	font-size:12px;
+	color: #7b7b7b;
+}
+
+.btn-danger {
+	margin-top: 20px;
+}
+
+.small-pic {
+	margin-top: 30px;
+}
+
+.activityer2 {
+	width: 300px;
+	margin-top: 60;
+}
+
+.third {
+	width: 320px;
+	padding: 10px;
+}
+
+.third .post {
+	height: 323px;
+	overflow: hidden;
+}
+
+.third img {
+	margin: 0 auto;
+	width: 100%;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+.top {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.list1 {
+	font-weight: bold;
+}
+
+.content {
+	margin-left: auto;
+	margin-right: auto;
+	height: 440px;
+	width: 1150px;
+	margin-top: 30px;
+}
+
+.list {
+	height: 370px;
+	width: 320px;
+	background-color: white;
+	padding: 15px;
+	float: left;
+	margin-top: 10px;
+}
+
+.pic {
+	height: 36px;
+	width: 36px;
+	float: left;
+}
+
+.nav {
+	padding: 1px;
+}
+
+.content1 {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.list2 {
+	height: 350px;
+	width: 230px;
+	background-color: #e0e0e0;
+	padding: 10px;
+	float: left;
+	margin-left: 10px;
+	margin-bottom: 15px;
+	position: relative;
+}
+
+.faqi-btn {
+	margin-left: 40px;
+	padding-left: 12px;
+	padding-right: 12px;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	margin-top: -10;
+}
+
+.nice-activity {
+	width: 1060px;
+	height: 345px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #FFFFFF;
+	position: relative;
+	border: 1px solid #d4d4d4;
+}
+
+.position-pic {
+	position: absolute;
+	margin-left: -15;
+	margin-top: -10;
+}
+
+.position-pic1 {
+	position: absolute;
+	top: -1px;
+}
+
+.position-pic img {
+	width: 80px;
+}
+
+.position-pic1 img {
+	width: 80px;
+}
+
+.second {
+	width: 1090px;
+	height: 370px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 20px;
+}
+
+.second2,.second1 {
+	width: 340px;
+	background-color: #FFFFFF;
+	padding-top: 10px;
+	margin-left: 16px;
+	margin-bottom: 20px;
+	float: left;
+	position: relative;
+	border: 1px solid #d4d4d4;
+}
+
+.look-btn {
+	position: absolute;
+	top: 260px;
+}
+
+.btn-font {
+	font-size: 18px;
+}
+
+.activity-pic1 {
+	float: left;
+	margin-top: 30px;
+}
+
+.activityer {
+	width: 300px;
+	margin-top: 28;
+}
+
+.canjia1 {
+	font-size:12px;
+	color: #d4d4d4;
+	margin-left: 27px;
+}
+
+.canjia {
+	font-size:12px;
+	color: #d4d4d4;
+	margin-left: 10px;
+}
+
+.canjiaNO {
+	color: red;
+}
+
+.activity-title2 {
+	color: #ff9000;
+	font-size: 18px;
+}
+
+#myModal {
+	-webkit-border-bottom-right-radius: 10em;
+	-moz-border-radius-bottomright: 10em;
+	border-bottom-right-radius: 5em;
+	background-color: #f8f8f8;
+}
+ .btn_a{
+ 	position:relative;
+ 	margin-top:-10px;
+ 
+ 
+ }
+ 
+ 
+.wenzi {
+	font-size:12px;
+	color: white;
+	background-color: #4b7390;
+	margin-left: 25px;
+	border-radius: 3px;
+}
+
+.info {
+	font-size:12px;
+	color: #677f8b;
+}
+
+.address {
+	color: #5883a3;
+}

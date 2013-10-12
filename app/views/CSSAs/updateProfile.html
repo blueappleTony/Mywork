@@ -1,0 +1,62 @@
+#{extends 'main.html' /} #{set title:'updateProfile.html' /}
+
+<div>
+<form action="@{CSSAs.doUpdateProfile}" method="POST" class="form-horizontal " accept-charset="${_response_encoding}">
+	
+	<p>
+	<div class="control-group">
+		<label class="control-label">官方主页</label>
+		<div class="controls">
+		<input type="text" name="user.homepage" value="${user.homepage}"  />
+		 <span class="error">#{error 'homepage' /}</span>
+		</div>
+	</div>
+	</p>
+	<p>
+	<div class="control-group">
+		<label class="control-label">成员人数</label>
+		<div class="controls">
+		<select name="user.peopleNumber">
+		<option ${user.peopleNumber=="1-20"?"selected":""} value="1-20">1-20</option>
+		
+		<option ${user.peopleNumber=="20-50"?"selected":""} value="20-50">20-50</option>
+		<option ${user.peopleNumber=="50-100"?"selected":""} value="50-100">50-100</option>
+		<option ${user.peopleNumber=="100-200"?"selected":""} value="100-200">100-200</option>
+		<option ${user.peopleNumber=="200及以上"?"selected":""} value="200及以上">200及以上</option>
+		</select>
+		
+		<span class="error">#{error 'people_number' /}</span>
+		</div>
+	</div>
+	</p>
+	<p>
+	<div class="control-group">
+		<label class="control-label">组织简介</label>
+		<div class="controls">
+		<input type="text" name="user.selfIntro" value="${user.selfIntro}" />
+		<span class="error">#{error 'selfIntro' /}</span>
+		</div>
+	</div>
+	</p>
+
+
+	<p>
+	<div class="control-group">
+		<label class="control-label">联系方式</label>
+		<div class="controls">
+		<input type="text" name="user.contract" value="${user.contract}"  />
+		<span class="error">#{error 'contract' /}</span>
+		</div>
+	</div>
+	</p>
+	<input type="hidden" name="user.id" value="${user.id}" />
+	<p class="buttons">
+	<div class="control-group">
+	<div class="controls">
+		<input type="submit" class="btn btn-info" value="更新" />
+		 </div>
+		 </div>
+	</p>
+		
+</form>
+</div>

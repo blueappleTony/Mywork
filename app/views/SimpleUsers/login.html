@@ -1,0 +1,44 @@
+#{extends 'main.html' /} #{set title:'login.html' /}
+ 
+<h4 id="title" >欢迎登录奥噗</h4>
+ 
+<p class="light"></p>
+
+<form id="login" action="@{SimpleUsers.authenticate}" method="POST"  class="form-horizontal" 
+	accept-charset="${_response_encoding}">
+	 
+	<div class="control-group">
+		<label  class="control-label">Email</label> 
+		<div class="controls">
+		<input type="text" name="email"
+			value="${flash.email}" id="email" /><span class="error">#{error 'email' /}</span>
+	</div>
+	</div>
+	 <div class="control-group">
+		<label  class="control-label">Password</label>
+		<div class="controls">
+		<input type="password" name="password"
+			value="" id="password" /><span class="error">#{error 'password' /}</span>
+			</div>
+			</div>
+	 
+
+	<div class="buttons">
+	<div class="control-group">
+		<div class="controls">
+			<input type="submit" class="btn btn-info" value="Login" id="loginButton" />
+			<a href="@{SimpleUsers.forgetPassword}" style="margin-left:80px;">忘记密码?</a> 
+			</div>
+		</div>
+	</div>
+	 
+</form>
+ 
+ 
+
+#{if flash.notconfirmed}
+<p>
+	邮箱未见证，重新<a class="action"
+		href="@{SimpleUsers.resendConfirmation(flash.notconfirmed)}">发送</a>邮件。
+</p>
+#{/if}

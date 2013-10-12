@@ -1,0 +1,399 @@
+﻿
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="icon" href="/public/images/favicon.ico" mce_href="/public/images/favicon.ico" type="image/x-icon">
+<meta name="viewport" content="width=device-width initial-scale=1.0">
+<title>欢迎来到奥噗</title>
+<link rel="stylesheet" href="/public/stylesheets/shou.css" />
+<link rel="stylesheet" href="/public/stylesheets/bootstrap.css" />
+<link rel="stylesheet" href="/public/stylesheets/style12.css" />
+
+
+<link href="/public/stylesheets/media-queries.css" rel="stylesheet"
+	type="text/css">
+</head>
+<body style="ww">
+	<div class="title-pic">
+	<div class="weiduduan clearfix">
+<div id="banner">
+  <ul id="banner_img">
+      <li class="item1"> <div class="wrapper"></div> </li>
+      <li class="item2"> <div class="wrapper"></div> </li>
+      <li class="item3"> <div class="wrapper"></div> </li>
+      <li class="item4"> <div class="wrapper"></div> </li>
+      <li class="item5"> <div class="wrapper"></div> </li>
+  </ul>
+ <div id="banner_ctr">
+         
+       <ul>
+            <li class="styclsa"><span> </span></li>
+            <li class="styclsa"><span> </span></li>
+            <li class="styclsa"><span> </span></li>
+            <li class="styclsa"><span> </span></li>
+            <li class="styclsa"><span> </span></li>
+       </ul>
+  </div> 
+</div>
+	 
+	</div>
+		
+			<img src="/public/img/logo.png" class="opp-1" style="">
+		<div id="login" class="login">
+
+
+			<div id="fir">
+				<form id="denglu_page" class="fm" method="post"
+					action="/simple/login">
+					<label id="login-font">登录奥噗</label> <label><a href="#"
+						id="login-font1" onClick="change()">注册<img class="flag"
+							src="/public/img/flag.png" alt="" /></a></label> <input type="text"
+						id="email" name="email" class="inputBox" placeholder="邮箱">
+					<input type="password" id="password" name="password"
+						placeholder="密码"> <label><input type="checkbox"
+						id="cssa" /> <span class="rem">我是CSSA</span></label>
+					<button class="btn btn-large btn-block btn-info btn-denglu"
+						id="button-denglu" type="button" id="btn">登录</button>
+
+					<label class="checkbox"> <input type="checkbox"
+						id="remember"><span class="rem">记住我</span> <a href="#"
+						id="forget">忘记密码？</a></label>
+				</form>
+			</div>
+
+			<div id="send">
+				<form id="zuce_page" class="hide" method="post"
+					action="@{SimpleUsers.register}" style="margin-top:40px;">
+					<label id="login-font2">注册奥噗</label>
+					 <label><a href="#"	id="login-font3" onClick="change_page()">
+					 <span id="font"style="">登录</span>
+					 <img src="/public/img/flag.png" class="flag"alt="" /></a></label>  
+					 <input type="text" id="email" name="email"	class="inputBox" placeholder="请输入邮箱"> 
+					 <input type="text"	id="username" name="name" placeholder="请输入昵称"> 
+					 <input	type="password" id="password2" name="password" placeholder="请输入密码">
+					<input type="password" id="password" name="password2"
+						placeholder="请再次输入密码">
+					<input class="btn btn-large btn-block btn-info zhuce-btn"
+						type="submit" id="btn" value="注册"  />
+				</form>
+			</div>
+		</div>
+	</div>
+	<div class="containers">
+		<div class="left1">
+			<div class="high1">
+				<a href="@{Airports.index}"><span class="small-title">新生接机</span>
+					<span class="small-title2-1">WELCOME</span></a> <span
+					class="small-title3-1"> 已有 <span class="small-title4-1">1212</span>
+					名同学被顺利接到
+				</span> 
+
+			</div>
+
+			<ul>
+				<li class="list1">
+					<div class="test">
+						<span class="left_title1">2</span>
+					</div>
+
+					<div class="student1">
+						<a href="#" class="student"><span class="content-title1">【最新】</span>同学们，旧金山机场暑期接机活动正在招募中，机会难得，赶紧下手报名吧</a>
+					</div>
+
+				</li>
+
+				<li class="list1">
+					<div class="test">
+						<span class="left_title">215</span>
+					</div>
+
+					<div class="student">
+						<a href="#" class="student">同学们，旧金山机场暑期接机活动正在招募中，机会难得，赶紧下手报名吧</a>
+					</div>
+
+				</li>
+				<li class="list1">
+
+					<div class="test">
+						<span class="left_title">22144</span>
+					</div>
+
+					<div class="student">
+						<a href="#" class="student">同学们，旧金山机场暑期接机活动正在招募中，机会难得，赶紧下手报名吧</a>
+					</div>
+				</li>
+
+			 
+
+			<li class="list1">
+				<a class="btn btn-large  btn-warning btn-jieji" type="button"
+					id="btn" href="@{Airports.index}">
+					<img src="/public/img/feiji.png" alt="" />新生接机快速通道
+				</a>
+			</li>
+
+			</ul>
+
+		</div>
+
+
+		<div>
+			<img src="/public/img/5.png" class="pic-5" alt="" />
+		</div>
+
+		<div class="right1">
+			<div class="high1">
+
+
+
+				<a href="@{Activities.index}"><span class="small-title">最新活动</span>
+					<span class="small-title2-2">ACTIVITY</span></a> <span
+					class="small-title3-2"> <span class="small-title4-2">188</span>
+					次认证活动， <span class="small-title4-2">31176</span> 次结交机会
+				</span> 
+			</div>
+
+			<ul>
+				<li class="list1">
+					 
+						<div class="test">
+							<span class="left_title2">2</span>
+						</div>
+						<a href="#" class="student"><span class="content-title2">【学生会】</span>同学们，旧金山机场暑期接机活动正在招募中，机会难得，赶紧下手报名吧</a>
+					</li>
+
+					<li class="list1">
+						 
+							<div class="test">
+								<span class="left_title"> 218 </span>
+							</div>
+							<a href="#" class="student">同学们，旧金山机场暑期接机活动正在招募中，机会难得，赶紧下手报名吧</a>
+						</li>
+
+						<li class="list1">
+						 
+								<div class="test">
+									<span class="left_title"> 2211 </span>
+								</div>
+								<a href="#" class="student">同学们，旧金山机场暑期接机活动正在招募中，机会难得，赶紧下手报名吧</a>
+							</li>
+
+							
+			</ul>
+			<button class="btn btn-info btn-1" type="button">Read More</button>
+
+		</div>
+		<div class="left2">
+			<div class="high1">
+				<a href="@{QuestAnsw.searchPage}"><span class="small-title">最热话题</span> <span
+					class="small-title2-3">QUESTION</span></a> <span class="small-title3-3">
+					<span class="small-title4-3">243</span> 个日常话题， <span
+					class="small-title4-3">31176</span> 个精华回答
+				</span> 
+			</div>
+
+			<ul>
+			 
+					<li class="list1">
+						 
+							<div class="test">
+								<span class="left_title"> 218 </span>
+							</div>
+							<a href="#" class="student">同学们，旧金山机场暑期接机活动正在招募中，机会难得，赶紧下手报名吧</a>
+						</li>
+				 
+					 
+						<li class="list1">
+						 
+							<div class="test">
+								<span class="left_title"> 218 </span>
+							</div>
+							<a href="#" class="student">同学们，旧金山机场暑期接机活动正在招募中，机会难得，赶紧下手报名吧</a>
+						</li>
+
+					 
+						 
+							<li class="list1">
+						 
+							<div class="test">
+								<span class="left_title"> 218 </span>
+							</div>
+							<a href="#" class="student">同学们，旧金山机场暑期接机活动正在招募中，机会难得，赶紧下手报名吧</a>
+						</li>
+						 
+							  		<li class="list1">
+							  		 	<button class="btn btn-info btn-1" type="button">Read More</button>
+							  </li>
+							  	
+			</ul>
+
+		</div>
+
+
+
+
+
+
+
+
+
+		<div class="right2">
+			<div class="high1">
+ 
+				<a href="@{Charities.pigination(1)}"><span class="small-title">爱心公益</span> <span
+					class="small-title2-4">COMMOMWEAL</span></a> <span
+					class="small-title3-4"> <span class="small-title4-4">4</span>
+					个认证公益行动， <span class="small-title4-4">1</span> 份希望援助
+				</span>  
+			</div>
+
+			<ul>
+			 
+				 
+						<li class="list1">
+						 
+							<div class="test">
+								<span class="left_title"> 218 </span>
+							</div>
+							<a href="#" class="student">同学们，旧金山机场暑期接机活动正在招募中，机会难得，赶紧下手报名吧</a>
+						</li>
+				 
+					 
+							<li class="list1">
+						 
+							<div class="test">
+								<span class="left_title"> 218 </span>
+							</div>
+							<a href="#" class="student">同学们，旧金山机场暑期接机活动正在招募中，机会难得，赶紧下手报名吧</a>
+						</li>
+
+					 
+						 
+							<li class="list1">
+						 
+							<div class="test">
+								<span class="left_title"> 218 </span>
+							</div>
+							<a href="#" class="student">同学们，旧金山机场暑期接机活动正在招募中，机会难得，赶紧下手报名吧</a>
+						
+						
+						</li>
+							<li class="list1">
+					<button class="btn btn-info btn-1" type="button">Read More</button>
+		
+					</li>
+
+
+								</ul>
+		</div>
+		<div>
+			<img src="/public/img/pic-2.png" alt="" class="pic-6" />
+		</div>
+
+	</div>
+
+
+
+
+	 
+	<div class="row-fluid">
+
+		<div class="span12">
+
+
+
+			<div class="navbar navbar-inverse navbar-static-bottom">
+				<div class="navbar">
+					<div class="container-fluid">
+
+						<div class="nav-collapse collapse navbar-responsive-collapse">
+
+							<ul class="nav" id="bottom-nav">
+								<li><a href="#" class="list3">&copy; opporlink&nbsp; 奥噗</a></li>
+								<li><a href="#" class="list3">关于我们</a></li>
+								<li><a href="#" class="list3">加入奥噗</a></li>
+
+								<li><img src="/public/img/share_facebook.png"
+									class="bottom_pic" /></li>
+								<li><img src="/public/img/share_google+.png"
+									class="bottom_pic" alt="" /></li>
+								<li><img src="/public/img/share_twitter.png"
+									class="bottom_pic" alt="" /></li>
+								<li><img src="/public/img/share_weibo.png"
+									class="bottom_pic" alt="" /></li>
+
+							</ul>
+
+
+						</div>
+
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="public/javascripts/jquery.js"></script>
+		<script type="text/javascript" src="public/javascripts/banner.js"></script>
+	<script type="text/javascript"
+		src="public/javascripts/bootstrap.min.js"></script>
+	<script type="text/javascript"
+		src="public/javascripts/jquery.validate.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			$("#cssa").click(function() {
+				if ($(this).attr("checked")) {
+					$(this).removeAttr("checked");
+					$("#denglu_page").attr("action", "/simple/login")
+				} else {
+					$(this).attr("checked", 'true');
+					$("#denglu_page").attr("action", "/cssa/login")
+				}
+			})
+			$(".btn-denglu").click(function() {
+				$(".fm").submit()
+			});
+
+			$(".fm").validate({
+				rules : {
+					'email' : {
+						required : true,
+						email : true
+					},
+					'password' : {
+						required : true,
+						rangelength : [ 7, 18 ]
+					}
+				},
+				messages : {
+					email : {
+						required : '请输入电子邮件地址',
+						email : '电子邮件格式错误'
+					},
+					password : {
+						required : "请输入密码",
+						rangelength : "密码长度为7~18位"
+					}
+
+				}
+			});
+		});
+
+		function change() {
+			$("#fir").fadeOut(1000);
+			$("#denglu_page").addClass("hide");
+			$("#send").fadeIn(1000);
+			$("#zuce_page").removeClass("hide");
+
+		}
+		function change_page() {
+			$("#fir").fadeIn();
+			$("#denglu_page").removeClass("hide");
+			$("#send").fadeOut();
+			$("#zuce_page").addClass("hide");
+		}
+	</script>
+</body>
+</html>

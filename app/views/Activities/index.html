@@ -1,0 +1,168 @@
+#{extends 'main.html' /} #{set title:'index.html' /}
+#{set 'Styles'}
+<link rel="stylesheet" href="/public/stylesheets/scrollpagination.css" />
+<link rel="stylesheet" href="/public/stylesheets/Activity-index.css"/>
+
+#{/}
+<div class="classify NO1">
+	<dl class="classify-dl clearfix">
+		<dt class="list-tit">
+			<img src="/public/img/category.png">分类:
+		</dt>
+		<dd class="list-fy  on">
+			<a href="@{Activities.filterType()}" class="${type==''?'active':''}">
+				全部</a>
+		</dd>
+		#{list items:t,as:'t'}
+
+		<dd class="list-fy ">
+			<a href="@{Activities.filterType(t.name)}"
+				class="${type==t.name?'active':''}"> ${t.name}<span
+				class="activitys"> </span>
+			</a>
+		</dd>
+
+		#{/list}
+	</dl>
+	<dl class="classify-dl clearfix">
+		<dt class="list-tit">
+			<img src="/public/img/location.png">范围:
+		</dt>
+		<dd class="list-fy  on">
+			<a href="@{Activities.filterScope()}"
+				class="${scope==''?'active':''}"> 全部</a>
+		</dd>
+		#{list items:s,as:'s'}
+		<dd class="list-fy  ">
+			<a href="@{Activities.filterScope(s.scope)}"
+				class="${scope==s.scope?'active':''}"> ${s.scope}</a>
+		</dd>
+
+		#{/list}
+	</dl>
+
+	<dl class="classify-dl clearfix">
+		<dt class="list-tit">
+			<img src="/public/img/location.png">时间:
+		</dt>
+		<dd class="list-fy  on">
+			<a href="@{Activities.filterPeriod(-1)}"
+				class="${days==-1?'active':''}"> 全部</a>
+		</dd>
+		#{list items:p,as:'p'}
+		<dd class="list-fy  ">
+			<a href="@{Activities.filterPeriod(p.days)}"
+				class="${days==p.days?'active':''}"> ${p.period}</a>
+		</dd>
+		#{/list}
+		<dd class="list-fy " date="all_btm">
+			<a href="@{Activities.filterPeriodWeekend}"
+				class="${days==-2?'active':''}" style="margin-left: 10px;"> 周末</a>
+		</dd>
+
+	</dl>
+	<dl class="classify-dl clearfix" style="height: 20px;">
+		<dt class="list-tit">
+			<img src="/public/img/location.png" />地点：
+		</dt>
+		<dd class="list-fy1">
+			<form method="post" action="@{Activities.filterLocation}">
+				<input type="text" name="location" value="${location}" id="" />
+				<input type="submit" class="btn btn-info btn_a" value="查询"> 
+				<input type="button" class="btn btn_a" value="清空" id="reset" />
+			</form>
+		</dd>
+		
+	</dl>
+	   <dl class="classify-dl " style="
+    width: 0px;
+">
+			<dd class="list-fy1">
+				<a href="@{Activities.Create}" class="btn btn-success btn_b" >创建活动</a>
+			</dd>
+		</dl>
+		
+	
+</div>
+ 
+<div class="second" id="content">
+
+	<!--下面部分-->
+	#{if a.isEmpty()} 暂无活动 #{/if} #{else} #{list items:a,as:'a'}
+	<div class="second1">
+		#{if a.isHot}
+		<div class="position-pic1">
+			<img src="/public/img/active_detailed_tag1.png">
+		</div>
+		#{/if}
+		<div class="third">
+
+			<div class="post">
+				<a href="@{Activities.detail(a.id)}"><img src="${a.poster}"></a>
+			</div>
+			<div>
+				<a class="activity-title2">${a.name}</a>
+			</div>
+			<div style="width:50px;" class="pull-right"><a href="@{Activities.userThumb(a.publisher_id)}"  data-target="#modal" data-toggle="modal"><img src="${a.publisher_profile}" class="img-polaroid"> ${a.publisher_name}</a></div>
+			<div class="" style="font-size:12px;">
+				<span>${a.distances==""?"":"距离："+a.distances}</span> <span>${a.duration==""?"":"驾车："+a.duration}</span>
+				<span>${a.timeFrom}</span> 至 <span>${a.timeTo}</span><span class="canjiaNO"> </span>
+			</div>
+			<a class="detailed"> ${a.summary} </a>
+
+			
+		</div>
+	</div>
+	#{/list} #{/else}
+
+	<!--下面部分2-->
+<div id="modal"></div>
+	<!--下面部分3-->
+</div>
+<div style="clear: both"></div>
+<div class="loading" id="loading">加载中，请稍后...</div>
+<div class="loading" id="nomoreresults">没有更多了，敬请期待。</div>
+#{set 'Scripts'}
+<script type="text/javascript" src="/public/javascripts/scrollpagination.js"></script>
+<script type="text/javascript">
+$(function(){
+    $('#content').scrollPagination({
+        'contentPage':'/activity/pagination/', 
+        'contentData': {}, 
+        'scrollTarget': $(window), 
+        'heightOffset': 10, 
+        'beforeLoad': function(){ 
+            //$('#loading').fadeIn();
+        },
+        'afterLoad': function(elementsLoaded){
+             $('#loading').fadeOut();
+            // $(elementsLoaded).fadeInWithDelay();
+            
+        }
+    });
+
+    $.fn.fadeInWithDelay = function(){
+        var delay = 0;
+        return this.each(function(){
+            $(this).delay(delay).animate({opacity:1}, 200);
+            delay += 100;
+        });
+    };
+           
+});
+	$(function() {
+		$('#reset').click(function() {
+			$("input[name='location']").val("");
+
+		})
+
+	})
+	
+	$('#myModal').data('modal').options.remote = "http://website.com/item/7";
+	
+</script>
+#{/set}
+
+
+
+

@@ -1,0 +1,80 @@
+#{extends 'main.html' /} #{set title:'detail.html' /}
+<link rel="stylesheet" href="/public/stylesheets/activity-detail.css" />
+<div>
+	<div class="left-div">
+		<div class="activity-pic">
+			<img src="${a.poster}">
+		</div>
+
+		<div class="activity">
+			<div class="activity-weight">
+				<span>${a.name}</span>
+				<div class="detail">
+					<a class="pic-leftTitle">时间：</a><a>${a.dateFrom==a.dateTo?a.dateFrom:a.dateFrom+"至"+a.dateTo}
+						${a.timeFrom}-${a.timeTo}</a>
+				</div>
+
+				<div class="detail">
+					<a class="pic-leftTitle">地点：</a><a>${a.location}</a>
+				</div>
+				<div class="detail">
+					<a class="pic-leftTitle">费用：</a><a>${a.money}$</a>
+				</div>
+				<div class="detail">
+					<a class="pic-leftTitle">人数：</a><a>${a.scope}</a>
+				</div>
+				<div class="detail">
+					<a class="pic-leftTitle">类型：</a><a>${a.type}</a>
+				</div>
+				<div class="detail">
+					<a class="pic-leftTitle">发起人：</a><a>${publisher_name}</a>
+				</div>
+				<div class="detail">
+					<a class="pic-leftTitle">是否通过审核：</a><a>${a.is_checked?"是":"否"}</a>
+				</div>
+
+				<div>
+					<a href="@{Activities.join(a.id)}" class="btn btn-danger" >报名参加</a>
+					<a href="@{Activities.like(a.id)}" class="btn btn-info" >关注</a>
+				</div>
+			</div>
+			
+		</div>
+		<div style="clear: both"></div>
+		<div class="activity-introduction">
+			<h3>活动介绍</h3>
+			<p>${a.intro}</p>
+		</div>
+
+
+	</div>
+	<div class="right">
+		<div class="right-top">
+			<a href="@{Activities.Create}" class="btn btn-info faqi">
+				<img src="/public/img/guoqi.png">发起活动
+			</a>
+		</div>
+		<div class="map">
+			<b class="activity-title3">活动地图</b> <a href="https://maps.google.com/?q=${a.location}" target="_blank">点击查看大图</a> <img
+				src="http://maps.googleapis.com/maps/api/staticmap?center=${a.location}&zoom=11&size=235x165&markers=color:green%7Clabel:A%7C${a.location}&sensor=false" alt="">
+		</div>
+		<div class="person">
+			<h4 class="activity-title3">活动组织者</h4>
+			<div class="activity-userpic">
+				<img src=${publisher_profile} alt="" style="height:60px;width:60px;">
+			</div>
+			<div>
+				<small class="name">${publisher_name}</small> 
+			</div>
+		</div><br/>
+		<div class="numbers">
+			<h4 class="activity-title4">活动成员</h4>
+			<span class="canyuNO">${a.joinerCount}</span><span class="canyu1">人参与</span> <span
+				class="guanzhuNO">${a.likerCount}</span><span class="canyu1">人已关注</span><br>
+				#{list items:activityJoiner,as:'aj'}
+			<img src="${aj.profile}" style="width:50px;" alt="${aj.name}">
+			#{/list}
+		</div>
+	</div>
+	<div style="clear: both"></div>
+</div>

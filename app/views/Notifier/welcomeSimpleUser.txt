@@ -1,0 +1,5 @@
+Hey,${user.name}, 
+
+点击链接  @@{SimpleUsers.confirmRegistration(user.needConfirmation)} ，激活帐户。
+
+OpporLink group.

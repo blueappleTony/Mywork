@@ -1,0 +1,220 @@
+#{extends 'main.html' /}
+#{set title:'searchPage.html' /}
+#{set 'Styles'}
+<link rel="stylesheet" href="/public/stylesheets/scrollpagination.css" />
+<link rel="stylesheet" href="/public/stylesheets/Activity-index.css"/>
+#{/}
+<script type="text/javascript" src="../../../public/javascripts/allunivlist.js"></script>
+<script type="text/javascript" src="../../../public/javascripts/jquery-1.7.2.min.js"></script>
+<script type="text/javascript"> 
+
+$(document).ready(function(){
+	var idnum;
+	var sub;
+	$("a.kuaishuhuida").hide();
+	$("a.guanzhu-question").click(function(){
+		if($(this).next().hasClass('hide')){
+		$(this).next().removeClass('hide');
+		   // idnum=$(this).attr('idnum');
+		   // sub = '#sub'+idnum;
+		}else{
+			$(this).next().addClass('hide');
+		}
+	});
+	
+});
+	var school = "";
+	$(function (){
+		$.each(allUnivList,function (j,m){		
+			$("#gj").append("<a href='javascript:void(0);' style='margin: 8px;'  onclick='getSheng("+j+",\""+m.name+"\")'>"+m.name+"</a>");			
+		});
+	});
+	//获得每个国家的省份
+	function getSheng(aid,name){
+	school = name;
+		$("#sheng").show();
+		$("#list").html('');
+		$("#sheng").html('');
+		if (allUnivList[aid].provs.length == 0){
+			$("#sheng").append("很抱歉！暂时没有数据（只提供了中国和美国的学校信息)");
+		}
+		else
+		{
+			$.each(allUnivList[aid].provs,function (j,m){				
+				$("#sheng").append("<a href='javascript:void(0);' style='margin: 10px;' onclick='getSchool("+aid+","+j+",\""+m.name+"\")'>"+m.name+"</a>");
+			});
+		}
+	}
+	//快速回答
+	function test(cid,qid){		
+		var comments=#{jsAction @QuestAnsw.comments(':qid',':comment')  /}
+		var comment =  document.getElementById(cid).value;
+		var show = "show"+qid;
+		
+		 $.get(comments({qid:qid,comment:comment}),
+		function(data) {
+			 document.getElementById(show).innerText = data;
+		});
+	}
+
+	//获得每个省份的学校
+	function  getSchool(gid,pid,name){
+	school = school.substring(0,2);
+	school += " - "+name;
+	$("#list").show();
+		$("#list").html('');
+		$.each(allUnivList[gid].provs[pid].univs,function (k,l){
+			$("#list").append("<a href='#'  style='width:270px;display:block;float:left; margin:10px;'>"+l.name+"</a>");
+		});
+		$("#list").append("<br style='clear:both;' />");
+			
+	}
+	$("#list a").live("click",function (){
+		$("#gj").hide();
+		$("#list").hide();
+		$("#sheng").hide();
+		school += " - "+$(this).text();
+		$("#txtSc").val(school);
+	});
+	$("#txtSc").live("click",function (){
+		$("#gj").show();
+		$("#list").hide();
+		$("#sheng").hide();
+	});	
+</script>
+<div class="classify NO1">
+			<dl class="classify-dl clearfix">
+				<dd class="list-fy">
+					<form action="@{QuestAnsw.searchQues}" method="post" class="form-search" style="margin-left:-27px; ">
+						<input class="span2" placeholder="输入你想知道的问题..."
+						 type="text" id="ques" name="ques"  value="${flash.ques}"  style="border:1px #5885a5 solid; width:250px;height:35px;">
+						<button type="submit" class="btn" style="border:1px #5885a5 solid; height:45px;">搜索问题</button>		
+					</form>
+				 </dd>
+				 
+					<dd class="list-fy">
+					 	<a class="btn"  href="@{QuestAnsw.QuesIndex}" style="border:1px #5885a5 solid; height:33px;">我要提问</a>
+				  </dd>
+		  </dl>
+	
+		<dl class="classify-dl clearfix">
+				<dt class="list-tit">
+					<img src="/public/img/category.png">标签:
+				</dt>
+				#{list items:t,as:'tag'}
+					<dd class="list-fy on">
+						<a class=" ${tag==tag.tagName?'QuestAnsw':''}  address" href="@{QuestAnsw.searchTag(tag.tagName)}">${tag.tagName}</a>
+					</dd>
+				#{/list}
+			 
+	  </dl>
+	  
+	  <dl class="classify-dl clearfix controls">
+	  		<div style="width:400px; overflow:hidden;">
+								<input type="text" id="txtSc" style="width:373px; border:3px #5885a5 solid; padding:10px; overflow:hidden; " 
+								name="school" value="${flash.school}" placeholder="请选择学校" />
+								<div id="gj" style="width:373px; border:3px #5885a5 solid; padding:10px; overflow:hidden; line-height:25px; display:none;"></div>
+								<div id="sheng" style="width:373px; word-break:break-all; border:3px #5885a5 solid; padding:10px; overflow:hidden; line-height:25px;display:none;"></div>
+								<div id="list" style="width:373px; border:3px #5885a5 solid; padding:10px; overflow:hidden; line-height:25px;display:none; height:300px; overflow-y:auto;"></div>
+				</div>
+	   </dl>
+
+	 	 <dl class="btn-group" style="padding-left:45px; padding-bottom:10px;">
+					  <a class="btn"  style="width:120px; height:17px;line-height:15px;font-size:12px;">默认(时间)排序<img  src="/public/images/searchpageArrow.png"/></a>
+					  <a class="btn" href="@{QuestAnsw.SearchAnswNum}" style="width:100px; height:17px;line-height:15px;font-size:12px;">回答数量<img  src="/public/images/searchpageArrow.png"/></a>
+					  <a class="btn" style="width:100px; height:17px;line-height:15px;font-size:12px;">关注热度<img  src="/public/images/searchpageArrow.png"/></a>
+		</dl>
+</div>
+<div class="classify NO1">
+		<div  class="group1">
+				#{list items:qArticles,as:'qa'}
+					<div style="border-bottom:1px solid #dddddd;margin-left:20px; padding-bottom:5px; width:600px;">
+			 	 	 <label class="woqu">
+							<a class="tiezi-title" href="@{QuestAnsw.showQuesInfo(qa.ques.id)}" style="TEXT-DECORATION:none;" >${qa.ques.title}</a> <a>${qa.comments?.quesid}</a>
+					</label>
+						<label class="userinforleft">
+							<div class="guanzhu-num">
+								<a class="guanzhuNO2">${qa.ques.answerNum}</a>
+								<div>
+									<p class="muted">回答</p>
+								</div>
+							</div>
+							<div class="huida-num">
+								<a class="guanzhuNO3">${qa.ques.focusNum}</a>
+								<div>
+									<p class="muted">关注</p>
+								</div>
+							</div>
+							<div class="zan1">
+								<div class="zan-icon">
+									<img src="/public/images//1-2.png"><a class="zan-num">${qa.comments?.praiseNum}</a>
+								</div>
+							</div>
+						</label>
+						<div class="controls userinforright" style="padding-bottom:40px;">
+							<ul style="	margin-left:177px; width:363px;" >
+								<li>
+									<a class="muted"> 标签:</a>
+									<a class="keywords" style="TEXT-DECORATION:none;">${qa.ques.label}</a>
+								</li>
+								<li ><h5>${qa.ques.username}，${qa.ques.selfIntro}</h5></li>
+								<li class="qatitlea">	
+									<a class="qatitlea">${qa.comments?.comment.raw()}</a>
+								</li>
+								<li>
+									<a href="#" class="guanzhu-question">
+										<img src="/public/images/focus.png">
+										关注问题
+									</a>
+									<a class="guanzhu-question" idnum="${qa.comments?.quesid}">
+										<img src="/public/images/answer.png">
+										我来回答
+									</a>
+									<div  class="kuaishuhuida hide" style="width:364px; height:100px;margin-left:233px;">
+									<div  id="show${qa.comments?.quesid}" style="margin-left:-233px; width:363px;"></div>
+										<form id="comments${qa.comments?.quesid}"  action="@{QuestAnsw.comments}" method="POST" style="margin-left:-240px; width:365px;">
+											<input type="hidden"  name="quesid" value="${qa.comments?.quesid}" >
+											<textarea rows="2" style="width:350px;" id="comment${qa.comments?.quesid}" name="comment" value="${flash.comment}"></textarea>
+											<input class="btn btn-info tiwen-btn" type="button" value="发布回答" 
+											onclick="test('comment${qa.comments?.quesid}','${qa.comments?.quesid}')"
+											style="float:right; height:30px; margin-top:5px;" id="sub${qa.comments?.quesid}"> 
+										</form>
+									</div>
+								</li>
+							</ul>	
+						</div>
+						</div>
+			 	 	 #{/list}
+			 	 	 
+			 <div class="row-fluid">
+					<div class="span12" style="margin-left:10%;">
+						<div class="pagination">
+						<ul>
+								<li>
+									<a href="@{QuestAnsw.Quespaging(1)}" class="paging">首页</a>
+								</li>
+								<!-- 
+								<li>
+									<a href="@{QuestAnsw.Quespaging(pageNum)}" class="paging">上一页</a>
+								</li>
+								 -->
+								#{list items:1..pageCount,as:'page'}
+									<li>
+										<a href="@{QuestAnsw.Quespaging(page)}" class="paging">${page}</a>
+									</li>
+								#{/list}
+								<!--  
+								<li>
+									<a href="@{QuestAnsw.Quespaging(pageNum)}" class="paging">下一页</a>
+								</li>
+								-->
+								<li>
+									<a href="@{QuestAnsw.Quespaging(pageCount)}" class="paging">末页</a>
+								</li>
+							</ul>
+						</div>
+			 	 	</div>
+			 	 </div>
+			 	 	 
+			 </div>
+</div>

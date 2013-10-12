@@ -1,0 +1,91 @@
+#{extends 'main.html' /} #{set title:'pickupStudentsUserinfor.html' /}
+<div class="opporcontent">
+	<h1>接机服务</h1>
+	<div>
+		<fieldset>
+			<legend> 请认真填写你的信息 </legend>
+
+			<form id="pickupStudentsUserinfor"
+				action="@{Pickup.presentStudentInfo}" method="POST"
+				enctype="multipart/form-data">
+				<p>
+					<label><a style="color: #FF0000;"> * </a> 姓名：</label> <input
+						style="height: 20px" ; id="siUsername" type="text"
+						name="s.name" value="${flash.siUsername}"
+						placeholder="请输入真实姓名"> (请输入你的真实姓名)
+				</p>
+				<p>
+					<label><a style="color: #FF0000;"> * </a> 性别：</label> <input
+						type="radio" name="s.gengder" id="siSex" value="男" ${flash.gengder== "男"?"checked":""}" />男
+					<input type="radio" name="s.gengder" id="siSex" value="女"
+						${flash.gengder== "女"?"checked":""}" />女
+				</p>
+				<p>
+					<label><a style="color: #FF0000;"> * </a> 电话：</label> <input
+						style="height: 20px" ; type="text" id="siTelphone"
+						name="phone" value="${flash.siTelphone}"
+						placeholder="请输入有效的电话号码"> (请输入你的电话号码)
+				</p>
+				<p>
+					<label> <a style="color: #FF0000;"> * </a>Email:
+					</label> <input id="email" type="text" name="siEmail"
+						value="${flash.email}" placeholder="请输入邮箱" style="height: 20px";>（必须真实有效方便联系）
+				</p>
+				<p>
+					<label> <a style="color: #FF0000;"> * </a>专业:
+					</label> <input id="simajor" type="text" name="simajor"
+						value="${flash.major}" placeholder="请输入你的专业"
+						style="height: 20px";> (请输入你的专业课程)
+				</p>
+				<p>
+					<label><a style="color: #FF0000;"> * </a> 达到机场:</label> <input
+						id="siAirport" type="text" name="siAirport"
+						value="${flash.airport}" placeholder="将要到达的机场"
+						style="height: 20px";>（请填写到达的机场）
+				</p>
+				<p>
+					<label><a style="color: #FF0000;"> * </a> 航班:</label> <input
+						id="siAirport" type="text" name="flight"
+						value="${flash.flight}" placeholder="将要到达的机场"
+						style="height: 20px"; />（请填写到达的机场）
+				</p>
+				<p>
+					<label><a style="color: #FF0000;"> * </a> 到达日期:</label> <input
+						id="siDate" type="text" name="date" value="${flash.date}"
+						placeholder="例如：20130901" style="height: 20px";> (请填写到达日期)
+				</p>
+				<p>
+					<label><a style="color: #FF0000;"> * </a> 到达时间:</label> <input
+						id="siTime" type="text" name="time" value="${flash.time}"
+						placeholder="输入到达的时间" style="height: 20px";> (请填写到达时间)
+				</p>
+				<p>
+					<label> <a style="color: #FF0000;"> * </a>是否接机:
+					</label> <input type="radio" id="sipickup" name="isPickUp" value="true"
+						${flash.isPickUp== "true"?"checked":""} />是 <input type="radio"
+						id="isPickUp" name="sipickup" value="false" ${flash.isPickUp== "flase"?"checked":""} />否
+				</p>
+				<p>
+					<label><a style="color: #FF0000;"> * </a> 是否住宿:</label> <input
+						type="radio" id="isAccommodation" name="is" value="true" ${flash.isAccommodation== "是"?"checked":""}" />是
+					<input type="radio" id="siStay" name="isAccommodation" value="否"
+						${flash.isAccommodation== "false"?"checked":""}" />否
+				</p>
+				<p>
+					<label><a style="color: #FF0000;"> * </a> 行李:</label> <br />
+					<textarea name="luggage" cols="36" rows="4" id="luggage"
+						 placeholder="请描述行李大小，方便我们安排适当的车型.">${flash.luggage}</textarea>
+				</p>
+				<p>
+					<label> 备忘:</label> <br />
+					<textarea name="remarks" cols="36" rows="6" id="remarks"
+						 placeholder="还有什么需求请留言...">${flash.remarks}</textarea>
+				</p>
+				<p>
+					<input type="submit" value="提交"> <input type="submit"
+						value="重置">
+				</p>
+			</form>
+		</fieldset>
+	</div>
+</div>

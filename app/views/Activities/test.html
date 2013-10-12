@@ -1,0 +1,248 @@
+#{extends 'main.html' /} #{set title:'popupUserInfo.html' /}
+#{set 'Scripts'}
+<script type="text/javascript">
+	$(function() {
+		$('.click').click(function() {
+			$('.bg').css({
+				'display' : 'block'
+			});
+			$('.content').css({
+				'display' : 'block'
+			});
+		});
+		$('.bg').click(function() {
+			$('.bg').fadeOut(200);
+			$('.content').fadeOut(200);
+		});
+	});
+	function closeUserinfo() {
+		$('.bg').css({
+			'display' : 'none'
+		});
+		$('.content').css({
+			'display' : 'none'
+		});
+	}
+</script>
+#{/set}
+<style type="text/css">
+.bg {
+	display: none;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background: #000;
+	z-index: 2;
+	top: 0;
+	left: 0;
+	opacity: 0.7;
+}
+
+.content {
+	display: none;
+	width: 500px;
+	height: 470px;
+	position: fixed;
+	top: 50%;
+	margin-top: -200px;
+	background: #fff;
+	z-index: 3;
+	left: 50%;
+	margin-left: -250px;
+}
+
+.us-top {
+	height: 35px;
+	width: 500px;
+	background-color: #336699;
+}
+
+.f-left {
+	float: left;
+	padding-top: 10px;
+}
+
+.f-right {
+	float: right;
+	padding-top: 5px;
+}
+
+.us-con {
+	width: 500px height:200px;
+	padding-top: 20px;
+}
+
+.us-img {
+	height: 90px;
+	width: 90px;
+	padding-left: 20px;
+	float: left;
+}
+
+.us-font {
+	font-size: 18px;
+	font-weight: bold;
+	color: #000000;
+}
+
+.us-font-qianming {
+	font-size: 12px;
+	color: #666666;
+}
+
+.us-img-size {
+	height: 30px;
+	float: right;
+	padding-right: 20px;
+}
+
+.us-lick {
+	height: 30px;
+}
+
+.us-ping {
+	height: 15px;
+}
+
+.a-f {
+	font-size: 12px;
+}
+
+.us-li {
+	line-height: 18px !important;
+}
+
+.userinfo-font-w {
+	font-size: 12px;
+	color: #999999;
+}
+
+.userinfo-font-b {
+	font-size: 12px;
+}
+
+.us-act-s {
+	width: 20px;
+	height: 20px;
+	background-color: #336699;
+}
+
+.us-act-a-num {
+	text-align: center;
+	color: #FFFFFF;
+	font-size: 12px;
+}
+
+.us-act-a-sty {
+	font-size: 12px;
+	padding-left: 10px;
+}
+
+.us-li-j {
+	line-height: 30px;
+}
+
+.userinfo-l {
+	width: 500px;
+	height: 25px;
+	background-color: #B7AFC7;
+	padding-top: 5px;
+}
+</style>
+
+<div class="click">查看效果</div>
+<div class="bg"></div>
+<div class="content">
+	<div class="us-top">
+		<div class="f-left">
+			<span style="padding-left: 10px;"><img
+				src="/public/images/data_card_date.png"></span><a
+				style="color: #ffffff;">个人资料</a>
+		</div>
+		<div class="f-right"
+			style="height: 30px; width: 50px; background-color: #0066FF; text-align: center;">
+			<a style="color: #ffffff" onClick="closeUserinfo()">关闭</a>
+		</div>
+	</div>
+
+	<div class="us-con">
+		<div class="us-img">
+			<span><img src="/public/images/head.png"></span>
+		</div>
+		<div style="padding-left: 100px;">
+			<ul>
+				<li class="us-li"><span> <img
+						src="/public/images/data_card_male.png">
+				</span> <a class="us-font">石林</a></li>
+
+				<li class="us-li"><a class="us-font-qianming userinfo-font-w">
+						吃进去的是大米饭，挤出来的是一堆一堆的代码... </a></li>
+				<li class="us-li"><span class="us-img-size"> <img
+						class="us-lick" src="/public/images/data_card_fans.png"> <img
+						class="us-lick" src="/public/images/data_card_fans.png">
+				</span></li>
+				<li class="us-li" style="padding-top: 30px;"><span> <img
+						class="us-ping" src="/public/images/data_card_star.png"> <img
+						class="us-ping" src="/public/images/data_card_star.png"> <img
+						class="us-ping" src="/public/images/data_card_star.png"> <img
+						class="us-ping" src="/public/images/data_card_star.png">
+				</span> <a class="a-f userinfo-font-w">活动评分</a> <span class="f-right"
+					style="padding-right: 10px;"> <a class="a-f userinfo-font-w">粉丝981</a>|<a
+						class="a-f">关注TA</a>
+				</span></li>
+			</ul>
+
+		</div>
+		<div>
+			<ul>
+				<li><span> <a class="userinfo-font-b">25</a> <a
+						class="userinfo-font-w">岁,</a> <a class="userinfo-font-w">来自</a> <a
+						class="userinfo-font-b">河南郑州，</a> <a class="userinfo-font-w">现居</a>
+						<a class="userinfo-font-b">旧金山，</a> <a class="userinfo-font-b">单身，</a>
+						<a class="userinfo-font-w">手机号</a> <a class="userinfo-font-b">15543211234，</a>
+						<a class="userinfo-font-w">QQ</a> <a class="userinfo-font-b">999222333</a>
+				</span></li>
+			</ul>
+		</div>
+	</div>
+	<div>
+		<ul style="margin-left: 0px;">
+			<li class="userinfo-l"><span style="padding-left: 10px;">
+					<img class="us-ping" src="/public/images/flag.png"> <a
+					class="us-font">他最近的活动</a>
+			</span></li>
+		</ul>
+		<ul>
+			<li class="us-li-j"><span class="us-act-s"> <a
+					class="us-act-a-num">22</a>
+			</span> <a class="us-act-a-sty">为什么《亮剑》能带来那么大的收视率和影响力，其他的抗日剧却不能？</a></li>
+			<li class="us-li-j"><span class="us-act-s""> <a
+					class="us-act-a-num">22</a>
+			</span> <a class="us-act-a-sty">暗恋一个人，不想去追，又不想留遗憾，怎样告诉她比较好？</a></li>
+			<li class="us-li-j"><span class="us-act-s"> <a
+					class="us-act-a-num">22</a>
+			</span> <a class="us-act-a-sty">有没有系统介绍中餐各种食材/调料的特性及用法的书？</a></li>
+		</ul>
+	</div>
+
+	<div>
+		<ul style="margin-left: 0px;">
+			<li class="userinfo-l"><span style="padding-left: 10px;">
+					<img class="us-ping" src="/public/images/data_card_question.png">
+					<a class="us-font">他的互动回答</a>
+			</span></li>
+		</ul>
+		<ul>
+			<li class="us-li-j"><span class="us-act-s"> <a
+					class="us-act-a-num">22</a>
+			</span> <a class="us-act-a-sty">在戈壁荒滩的狗都不会叫，这是为什么？</a></li>
+			<li class="us-li-j"><span class="us-act-s"> <a
+					class="us-act-a-num">22</a>
+			</span> <a class="us-act-a-sty">哪些手机操作Word、Excel和电脑上差不多？</a></li>
+			<li class="us-li-j"><span class="us-act-s"> <a
+					class="us-act-a-num">22</a>
+			</span> <a class="us-act-a-sty">小麦草真的很有营养吗？在中国什么省份种植最适宜？</a></li>
+		</ul>
+	</div>
+
+</div>

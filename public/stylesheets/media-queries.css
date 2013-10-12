@@ -1,0 +1,296 @@
+/************************************************************************************
+smaller than 1380
+*************************************************************************************/
+@media screen and (max-width: 1380px) {
+
+	
+	
+		#login{
+			margin-left:60%;
+		
+		
+		}
+
+}
+/************************************************************************************
+smaller than 1200
+*************************************************************************************/
+@media screen and (max-width: 1200px) {
+
+	 
+	#login{
+		margin-left:50%;
+		 
+		float:none;
+	
+	}
+	.small-title3{
+		display:none;
+	
+	}
+	.opp-1{
+		left:5%;
+	}
+}
+/************************************************************************************
+smaller than 960
+*************************************************************************************/
+@media screen and (max-width: 960px) {
+	.title-pic:{
+		width:auto;
+		float: none;
+	
+	}
+	  .small-title3-3,.small-title3-1,.small-title3-2,.small-title3-4{
+	 display:none;
+	 }
+	#login{
+		margin-left:50%;
+	 
+		float:none;
+	
+	}
+	.small-title3{
+		display:none;
+	
+	}
+	.pic-5,.pic-6{
+	display:none;
+	}
+	.left2{
+		float:right;
+	}
+	.right2{
+	float:left;
+	}
+	#bottom-nav {
+margin-left: 18%;
+}
+	
+}
+/************************************************************************************
+smaller than 800
+*************************************************************************************/
+@media screen and (max-width: 700px) {
+	.title-pic:{
+		width:auto;
+		 
+	}
+	 .containers{
+	 	width: 95%;
+	 }
+	 
+	#login{
+		margin-left:50%;
+		float:none;
+		 
+	}
+	.pic-5,.pic-6{
+			
+			display:none;
+		}
+	 
+	.left1{
+		width: 100%;
+		margin: 0;
+		float: none;
+	
+	}
+	.left2{
+		width: 100%;
+		margin: 0;
+		float: none;
+	
+	}
+	
+	
+	.right1{
+		width: 100%;
+		margin: 0;
+		float: none;
+	
+	}
+	
+	.right2{
+		width: 100%;
+		margin: 0;
+		float: none;
+	
+	}
+	.small-title3{
+		display:none;
+	
+	}
+  .small-title3-3,.small-title3-1,.small-title3-2,.small-title3-4{
+	 display:none;
+	 }
+
+	#bottom-nav {
+margin-left: 16%;
+}
+}
+	
+	
+/************************************************************************************
+smaller than 650
+*************************************************************************************/
+@media screen and (max-width: 650px) {
+
+
+	.title-pic:{
+		width:auto;
+		 
+	
+	}
+	  .containers{
+	 	width: 95%;
+	 }
+	#login{
+		margin-left:50%;
+		float:none;
+	
+	}
+	.pic-5{
+			
+			width:100%;
+		}
+	.pic-6{
+			
+			width:100%;
+		}
+	.left1{
+		width: 100%;
+		margin: 0;
+		float: none;
+	
+	}
+	.left2{
+		width: 100%;
+		margin: 0;
+		float: none;
+	
+	}
+	
+	.right1{
+		width: 100%;
+		margin: 0;
+		float: none;
+	
+	}
+	
+	.right2{
+		width: 100%;
+		margin: 0;
+		float: none;
+	
+	}
+	.small-title3{
+		display:none;
+	
+	}
+  .small-title3-3,.small-title3-1,.small-title3-2,.small-title3-4{
+	 display:none;
+	 }
+	.bottom_pic{
+	height: 21px;
+	
+}
+#bottom-nav {
+margin-left:0%;
+}
+	
+}
+
+/************************************************************************************
+smaller than 560
+*************************************************************************************/
+@media screen and (max-width: 480px) {
+	
+	/* disable webkit text size adjust (for iPhone) */
+	body {
+ 		/* background-image: url(../images/ok.png); */
+ 		background-color:#e2e2e2;
+	}
+	.carousel-inner{
+		display:none;
+	}
+	
+	#bottom-pic{
+		margin-left:0;
+	}
+	.title-pic:{
+		width:auto;
+		float: none;
+		display:none;
+	
+	}
+	.opp-1,.opp-2{
+	display:none;
+	}
+	#login{
+		 position:relative;
+		 margin:0px auto;
+		 
+		 
+	}
+	 .containers{
+	 	width: 95%;
+	 }
+	.pic-5{
+			
+			width:100%;
+		}
+	.pic-6{
+			
+			width:100%;
+		}
+	.left1{
+		width: 100%;
+		margin: 0 auto;
+		float: none;
+	
+	}
+	.left2{
+		width: 100%;
+		margin: 0;
+		float: none;
+	
+	}
+	
+	.right1{
+		width: 100%;
+		margin: 0;
+		float: none;
+	
+	}
+	
+	.right2{
+		width: 100%;
+		margin: 0;
+		float: none;
+	
+	}
+	.small-title2{
+		display:none;
+	
+	}
+	 .small-title3-3,.small-title3-1,.small-title3-2,.small-title3-4{
+	 display:none;
+	 }
+	
+	.list3{
+		 float:left;
+		 padding:0px !important;
+		 margin-right:8px;
+	}
+#bottom-nav{
+	margin-left:0px;
+	
+}
+	
+.bottom_pic{
+ 
+	display:none;
+	
+}
+}

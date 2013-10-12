@@ -1,0 +1,7 @@
+#{extends 'main.html' /}
+#{set title: "info center" /}
+<div >
+<a href="@{SimpleUsers.changePassword(user.id)}">更改密码</a>
+<a href="@{SimpleUsers.updateProfile(user.id)}">更新资料</a>
+<a href="@{SimpleUsers.ChangeEmail(user.id)}">更改邮箱</a>
+</div>

@@ -1,0 +1,369 @@
+#{set title:'puStudents.html' /}
+<!DOCTYPE>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<link rel="stylesheet" href="../public/stylesheets/bootstrap.css" />
+	<link rel="stylesheet" href="../public/stylesheets/main.css" type="text/css" >
+	<link rel="stylesheet" href="../public/stylesheets/optitle.css" type="text/css" >
+	<link rel="stylesheet" href="../public/stylesheets/bootstrap.min.css" type="text/css" >
+	<link rel="stylesheet" href="../public/stylesheets/bootstrap-responsive.css" type="text/css" >
+	<link rel="stylesheet" href="../public/stylesheets/bootstrap-responsive.min.css" type="text/css" >
+	<link rel="stylesheet" href="../public/stylesheets/style.css" type="text/css" >
+	
+	<script type="text/javascript" src="..public/javascript/jquery.js"></script>
+	<script type="text/javascript" src="..public/javascript/opporlink.js"></script>
+	
+	<script src="@{'/public/javascripts/jquery.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+	<script src="@{'/public/javascripts/opporlink.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+	
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style type="text/css"></style>
+</head>
+
+<body>
+	<div class="opporbody">
+	
+		<!-- 这里是标题-->
+		<div class="maintitle" style="text-align:center;">
+			<div class="touConten">
+					<div  style="float:left; width:270px;">
+						<img class="opporlinklog" src="../public/images/logo_.png">
+					</div>		
+					<div class="biaoti" style="float:left; width:320px;">
+						<ul class="nav nav-pills" style="width:650px;">
+							<li >
+							<a href="@{Application.index}" class="biaotifont">首页</a></li>
+							<li >
+							<a href="@{userInfo.pickupIndex}" class="biaotifont">新生接机</a></li>
+							<li >
+							<a href="#" class="biaotifont">活动</a></li>
+							<li >
+							<a href="#" class="biaotifont">问答</a></li>
+							<li >
+							<a href="#" class="biaotifont">公益</a></li>
+						</ul>
+					</div>
+					<div class="titleSearch "  style="float:left; padding-top:8px;">
+						<form >
+						  <div style="float:left; width:210px;">
+								<input class="span2 titleinput"  type="text" placeholder="搜索感兴趣的活动、话题或人...">
+						  </div>
+						  <div style="float:left; padding-top:15px;"> 
+							<button type="button" style="width:34px; height:30px; background-color:#4b7390;" >
+							<img src="../public/images/search.png">
+							  </button>
+						  </div>
+						</form>
+					</div>
+					<div style="float:left; padding-left:20px; padding-top:25px;">
+					  <a style="color:#FFFFFF;"> 你好，刘纯阳</a>
+					</div>
+				
+					<div  style="float:left; padding-left:30px; padding-top:25px;">
+					  <a style="color:#CCCCCC;"> 退出</a>
+					</div>
+			</div>
+		</div>
+		
+		
+		<!--这里是内容-->
+		
+		<div class="opporcontent" style="height:1120px;">
+			<form id="puStudents" action="@{userInfo.stuAddSuccess}"  method="POST" enctype="multipart/form-data">
+					<div style="margin-top:30px; margin-left:50px;">
+						<div style="padding-top:10px;">
+							<h1><a class="pfc"> 接机服务</a></h1>
+						</div>
+						<div style="padding-top:20px;">
+							<span><a>hi,</a><a class="pfc">刘纯阳</a><a>,请如实填写以下内容。</a></span>
+						</div>
+					</div>
+					
+					<div class="pick-inpu">
+						<div class="pick-inpu-border" style="padding-bottom:20px;">						
+							<div class="fl malf"  >
+								<label><b>姓名</b></label>
+							</div>
+							<div class="fl malfinput">
+								<input type="text" class="pick-inpu-text" id="siUsername" name="siUsername" 
+								value="${flash.siUsername}" placeholder="请输入真实姓名">
+							</div>
+							
+							<div class="fl malffont">
+								<label><a style="color:#FF0000;">*</a><a class="pfcolor">(请输入您的的姓名)</a></label>
+							</div>
+						</div>
+					</div>
+					
+					<div class="pick-inpu">
+						<div class="pick-inpu-border" style="padding-bottom:20px;">						
+							<div class="fl malf"  >
+								<label><b>性别</b></label>
+							</div>
+							<div class="fl malfinput" style="width:140px;">
+								<div class="sexdiv" style="float:left; ">
+									<a class="sexnan">男</a>
+									<input type="radio" class="checkboxnan" name="siSex" id="siSex"  
+									value="男" ${flash.siSex=="男"?"checked":""} />
+								</div>
+								
+								<div class="sexdiv" style="float:right; ">
+									<a class="sexnan">女</a>
+									<input type="radio" class="checkboxnan" name="siSex" id="siSex"  
+									 value="女" ${flash.siSex=="女"?"checked":""} /> 
+								</div>
+								
+								
+							</div>
+						</div>
+					</div>
+					
+					
+					<div class="pick-inpu">
+						<div class="pick-inpu-border" style="padding-bottom:20px;">						
+							<div class="fl malf"  >
+								<label><b>电话或微信</b></label>
+							</div>
+							<div class="fl malfinput">
+								<input type="text" class="pick-inpu-text" 
+								id="siTelphone" name="siTelphone" value="${flash.siTelphone}" placeholder="请输入有效的电话号码">
+							</div>
+							
+							<div class="fl malffont">
+								<label><a style="color:#FF0000;">*</a><a class="pfcolor">(请输入您的电话)</a></label>
+							</div>
+						</div>
+					</div>
+					
+					
+					
+					<div class="pick-inpu">
+						<div class="pick-inpu-border" style="padding-bottom:20px;">						
+							<div class="fl malf"  >
+								<label><b>Email</b></label>
+							</div>
+							<div class="fl malfinput">
+								<input type="text" class="pick-inpu-text" 
+								id="siEmail"  name="siEmail" value="${flash.siEmail}" placeholder="请输入邮箱">
+							</div>
+							
+							<div class="fl malffont">
+								<label><a style="color:#FF0000;">*</a><a class="pfcolor">(必须真实有效方便联系)</a></label>
+							</div>
+						</div>
+					</div>
+					
+					
+					<div class="pick-inpu">
+						<div class="pick-inpu-border" style="padding-bottom:20px;">						
+							<div class="fl malf"  >
+								<label><b>学校</b></label>
+							</div>
+							<div class="fl malfinput">
+								
+								
+								<select name="school">
+								#{list items:l,as:'s'}
+								     <option value="${s.id}">${s.name}</option>   
+								     #{/list}
+								 </select>
+								
+								
+							</div>
+							
+							<div class="fl malffont">
+								<label><a style="color:#FF0000;">*</a><a class="pfcolor">(请输入您的学校名称)</a></label>
+							</div>
+						</div>
+					</div>
+					
+					
+					<div class="pick-inpu">
+						<div class="pick-inpu-border" style="padding-bottom:20px;">						
+							<div class="fl malf"  >
+								<label><b>专业</b></label>
+							</div>
+							<div class="fl malfinput">
+								<input type="text" class="pick-inpu-text" 
+ 								id="simajor" name="simajor" value="${flash.simajor}" placeholder="请输入你的专业">
+							</div>
+							
+							<div class="fl malffont">
+								<label><a style="color:#FF0000;">*</a><a class="pfcolor">(请输入您的专业课程)</a></label>
+							</div>
+						</div>
+					</div>
+					
+					
+					<div class="pick-inpu">
+						<div class="pick-inpu-border" style="padding-bottom:20px;">						
+							<div class="fl malf"  >
+								<label><b>到达机场</b></label>
+							</div>
+							<div class="fl malfinput">
+								<input type="text" class="pick-inpu-text"
+								id="siAirport" name="siAirport" value="${flash.siAirport}" placeholder="将要到达的机场" >
+							</div>
+							
+							<div class="fl malffont">
+								<label><a style="color:#FF0000;">*</a><a class="pfcolor">(请输入您到达的机场)</a></label>
+							</div>
+						</div>
+					</div>
+					
+					
+					
+					<div class="pick-inpu">
+						<div class="pick-inpu-border" style="padding-bottom:20px;">						
+							<div class="fl malf"  >
+								<label><b>到达日期</b></label>
+							</div>
+							<div class="fl malfinput">
+								<input type="text" class="pick-inpu-text"
+								 id="siDate" name="siDate" value="${flash.siDate}" placeholder="例如：20130901">
+							</div>
+							
+							<div class="fl malffont">
+								<label><a style="color:#FF0000;">*</a><a class="pfcolor">(请填写到达的日期)</a></label>
+							</div>
+						</div>
+					</div>
+					
+					
+					<div class="pick-inpu">
+						<div class="pick-inpu-border" style="padding-bottom:20px;">						
+							<div class="fl malf"  >
+								<label><b>时间</b></label>
+							</div>
+							<div class="fl malfinput">
+								<input type="text" class="pick-inpu-text"
+								id="siTime" name="siTime" value="${flash.siTime}" placeholder="输入到达的时间" >
+							</div>
+							
+							<div class="fl malffont">
+								<label><a style="color:#FF0000;">*</a><a class="pfcolor">(请输入具体到达时间)</a></label>
+							</div>
+						</div>
+					</div>
+					
+					
+					
+					<div class="pick-inpu">
+						<div class="pick-inpu-border" style="padding-bottom:20px;">						
+							<div class="fl malf"  >
+								<label><b>是否接机</b></label>
+							</div>
+							<div class="fl malfinput" style="width:180px;">
+								<div class="sexdiv" style="float:left; ">
+									<a class="sexnan">需要</a>
+									<input type="radio" class="checkboxnan" 
+									id="sipickupyes" name="sipickup" value="是" ${flash.sipickup=="是"?"checked":""}/> 	
+								</div>
+								
+								<div class="sexdiv" style="float:right; width:80px; ">
+									<a class="sexnan">不需要</a>
+									<input type="radio" class="checkboxnan" 
+									 id="sipickupno" name="sipickup" value="否" ${flash.sipickup=="否"?"checked":""} />
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					
+					<div class="pick-inpu">
+						<div class="pick-inpu-border" style="padding-bottom:20px;">						
+							<div class="fl malf"  >
+								<label><b>是否住宿</b></label>
+							</div>
+							<div class="fl malfinput" style="width:180px;">
+								<div class="sexdiv" style="float:left; ">
+									<a class="sexnan">需要</a>
+									<input type="radio" class="checkboxnan" 
+									id="siStayyes" name="siStay" value="是" ${flash.siStay=="是"?"checked":""}/>
+								</div>
+								
+								<div class="sexdiv" style="float:right; width:80px; ">
+									<a class="sexnan">不需要</a>
+									<input type="radio" class="checkboxnan" 
+									id="siStayno" name="siStay" value="否" ${flash.siStay=="否"?"checked":""}/>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					
+					
+					<div class="pick-inpu">
+						<div class="pick-inpu-border" style="padding-bottom:20px; height:20px;">						
+							<div class="fl malf"  >
+								<label><b>行李</b></label>
+							</div>
+							<div class="fl malfinput">
+								<textarea  class="pick-inpu-tarea" rows="3" 
+								id="siLuggage" name="siLuggage"  value="${flash.siLuggage}" placeholder="请描述行李大小，方便我们安排适当的车型."></textarea>
+							</div>
+							
+						</div>
+					</div>
+					
+					
+					<div class="pick-inpu">
+						<div class="pick-inpu-border" style="padding-bottom:20px; height:60px;">						
+							<div class="fl malf"  >
+								<label><b>备注</b></label>
+							</div>
+							<div class="fl malfinput">
+								<textarea class="pick-inpu-tarea" rows="5"
+								id="siRemarks" value="${flash.siRemarks}" name="siRemarks"  placeholder="还有什么需求请留言..."></textarea>
+							</div>
+						</div>
+					</div>
+					
+					
+					<div class="pick-inpu">
+						<div class="pick-inpu-border" style="padding-bottom:20px;">						
+							<div class="fl malf"  >
+								<label></label>
+							</div>
+							<div class="fl malfinput" style="width:280px;">
+								<div class="sexdiv" style="float:left; width:120px; height:40px; ">
+									<input type="submit"  style="width:120px; height:40px;"  value="提交">
+								</div>
+								
+									<div class="sexdiv" style="float:right; width:120px; height:40px; ">
+									<input type="reset"  style="width:120px; height:40px;" value="重置">
+								</div>
+							</div>
+						</div>
+					</div>
+				</form>
+		</div>
+		
+		
+		<!--这里是底部-->
+		<div class="opporlinkbottom" style="margin-top:1%;">
+			<div class="diConten">
+				<div style="float:left; padding-top:5px; padding-left:235px;">
+					<span ><a style="font-family:Arial;font-size:14px;color:#FFFFFF;">@2013 opporlink 奥噗</a></span>
+				</div>
+				<div style="float:left; padding-top:5px; padding-left:160px;">
+					<span ><a style="font-family:Arial;font-size:14px;color:#FFFFFF;">关于我们 加入奥噗</a></span>
+				</div>
+				<div style="float:left; padding-top:5px; padding-left:200px;">
+					<span >
+							<img src="../public/images/share_facebook.png">
+							<img src="../public/images/share_google+.png">
+							<img src="../public/images/share_twitter.png">
+							<img src="../public/images/share_weibo.png">
+					</span>
+				</div>
+			</div>
+		</div>
+		
+		
+	</div>
+</body>
+</html>

@@ -1,0 +1,10 @@
+# You can specialize this file for each language.
+# For example, for French create a messages.fr file
+#
+validation.required = 不能为空
+validation.equals = 重复错误
+validation.email = 邮箱格式不正确
+validation.url = URL 格式不正确
+validation.minSize = 不能少于%2$d个字符
+validation.maxSize =  不能多于%2$d个字符
+validation.future = 必须是未来时间

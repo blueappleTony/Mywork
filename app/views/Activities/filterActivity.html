@@ -1,0 +1,31 @@
+#{extends 'main.html' /}
+#{set title:'index.html' /}
+
+<p><a href="@{Activities.Create}">创建活动</a></p>
+<p><label>分类：</label>
+<span><a href="@{Activities.filterType(0)}">全部</a></span>
+#{list items:t,as:'t'}
+<span><a href="@{Activities.filterType(t.id)}">${t.name}</a></span> 
+#{/list}
+</p>
+<p><label>时间：</label>
+<span><a href="#">全部</a></span>
+#{list items:p,as:'p'}
+<span><a href="@{Activities.filterPeriod(p.days)}">${p.period}</a></span> 
+#{/list}
+<span><a href="@{Activities.filterPeriodWeekend}">周末</a></span>
+</p>
+<p><label>规模：</label>
+<span><a href="#">全部</a></span>
+#{list items:s,as:'s'}
+<span><a href="@{Activities.filterScope(s.id)}">${s.scope}</a></span> 
+#{/list}
+</p>
+#{if a.isEmpty()}
+	暂无活动
+#{/if}
+#{else}
+#{list items:a,as:'a'}
+<p><a href="@{Activities.detail(a.id)}"><img src="${a.poster}" style="width:100px; height:100px" />${a.name}</a></p>
+#{/list}
+#{/else}

@@ -1,0 +1,636 @@
+@charset "utf-8";
+
+
+	.ww{
+	 
+	background:#f3f3f3;
+	 
+	}
+ 
+ 
+	 .qatitle{
+	 	padding-top:15px;
+	 	 
+	 
+	 }
+	  
+ 	.list-fy{
+		 
+			margin-left:20px;
+			white-space:nowrap;
+			padding:0 6px;
+			float:left;
+			
+			position:relative
+		}
+		
+		.list-fy1{
+			white-space:nowrap;
+			margin-left:0px;
+			float:left;
+			position:relative
+		}
+		.quanbu{
+			 
+			margin-left:30px; 
+		
+		
+		}
+		
+		.All{
+			 float:left;
+			 width: 91;
+			height: 22; 
+		
+		
+		}
+		
+		.quanbu2{
+			
+			margin-left:55px; 
+		
+		
+		}
+		
+		.quanbu,.quanbu2{
+			background-color:#5883a3;
+			border-radius:5px;
+			color:white;
+			font-size:12px;
+			padding:0 3px;
+		
+		}
+		
+		
+		
+		
+		
+		
+		.dt {
+		font-weight:none;
+		}
+ 
+		
+		
+		
+		
+		
+		
+	.clearfix1{	
+		
+		padding-bottom: 0px;
+		margin-bottom: 0px;
+		height: 60px;
+	}
+ 
+address,caption,cite,code,dfn,em,strong,th,var{
+	font-style:normal;
+	font-weight:normal;
+	}
+li{
+	list-style:none
+}
+
+
+a{
+	 
+	text-decoration:none;
+	outline:0;
+	cursor:pointer
+}
+
+a:hover{
+	text-decoration:none;
+}
+.fenlei{
+	 width: 50px;color:black;
+
+}
+
+
+.classify,.classify-channel{
+	 
+	 
+	margin:0 auto;
+	padding: 15px 0 ;
+ 
+	background:#FFF;
+	width:1023px;
+	border-width: 0px;
+ 
+}
+
+ 
+.classify-dl,.classify-more{
+	position:relative;
+	padding:0 0 10px 45px;
+ 
+	font-size:12px;
+	line-height:20px;
+	font-family:微软雅黑;
+}
+
+.classify .list-tit,.classify-channel .list-tit{
+	height:20px;
+	color:black ;
+	position:absolute;
+	left:0;
+	top:0;
+	  width: 50px;
+	margin-left:20px;
+	 
+}
+ 
+
+.activitys{
+	color:#a8a8a8
+
+
+}
+
+
+
+.classify-more .list-tit{
+	left:-45px
+}
+
+.classify-third .list-tit{
+	left:-55px
+}
+
+
+ 
+
+.classify-more .list-more,#city_swich .city_nav a.jiao,.dressing a{	
+background-image:url(../img/pdlistui.jpg);  
+no-repeat
+}
+
+ 
+
+
+.dressing-top{
+border:1px solid #d8d4d5;
+margin-top:0}
+.dressing li{
+float:left;
+ 
+font-size:12px;
+color:#666;
+line-height:24px;
+line-height:22px;
+line-height:22px
+}
+ 
+ 
+
+
+.dressing .sales{
+	background-position:-6 -189px;
+	width:43px;
+	padding:3 29px 9 6;
+}
+.dressing .sales1{
+	background-position: -4 -270px;
+width: 43px;
+padding: 3 29px 9 8;
+	color:#7b7b7b;
+	
+}
+
+ 
+ 
+ 
+	
+		.top{
+			margin-left:auto;
+			margin-right:auto;
+		}	
+		.question-left{
+			 height:230px;
+			 position:relative; 
+		
+		}
+		.question-left1{
+		 
+		 height:70px; 
+		 border: 1px solid #d8d8d8;
+		 padding-left:60px;
+		 padding-top:30px;
+		 
+		border-right-width: 0px;
+		border-left-width: 0px;
+
+		
+		}
+		.question-text{
+			 width:460px;
+			 height:40px; 
+			 border: 3px solid  #5885a5;
+		
+		}
+		
+		.tiwen-btn,.tiwen-btn1{
+		
+		 margin-top: -10px;
+		 width: 113px; 
+		 height: 40px;
+	 
+		}
+		.tiwen-btn{
+			 margin-left: -115px;
+		}
+		
+		
+		.tiwen-btn1{
+		 margin-left:30px;
+		 
+		}
+		.bq{
+			color:#b9b9b9;
+		}
+		
+		
+		
+		.top3{
+			 width:992px;
+			 border-left-width: 0px;
+			 margin-right: 0px;
+			 border-right-width: 0px;
+			 border-bottom-width: 0px;
+		
+		}
+		
+		.top4{
+			 background-color:#5883a3;
+			 border-radius:5px;
+			 color:white;
+			 font-size:8px;
+			 padding:0 3px;
+		
+		}
+		.form-horizontal{
+			width:700px;
+			 float:left
+		
+		}
+		
+	 #t{
+	 	 width:420px;
+		  height:50px; 
+		  display:none;
+	 }
+	 #b{
+	  float:right; 
+	  display:none;
+	   font-size:11px;
+	    margin-right:10px;
+		 margin-top:10px;
+		 }
+	 
+		.zh{
+		
+			 font-size:22px;color:#0078b6;
+		
+		}
+		
+	 
+		.woqu{
+	 
+			 width:auto;
+			 margin-left:4%; margin-top:3%; 
+		
+		}
+		
+		.xyz{
+			 width:auto; 
+			 margin-left:4% ;
+		 
+			float: left;
+			width: 160px;
+			padding-top: 5px;
+			text-align:left;
+			 
+			 margin-top:3%; 
+		
+		}
+		.guanzhuNO2,.guanzhuNO3{
+			 font-weight:bold;
+			 font-size:18px;
+		
+		}
+		.guanzhuNO2{
+			color:#333333;
+		}
+		.guanzhuNO3{
+			color:white;
+		}
+		.guanzhu-font{
+		 color:#999999;font-size:8px;
+		
+		}
+	
+		.huida-font{
+		 color:white;
+		 font-size:8px;
+		
+		}
+ 
+	.userinforleft {
+		float: left;
+		width: 88px;
+		padding-top: 5px;
+		text-align: right;
+		margin-left:4%;
+	}
+ 
+	.userinforright{
+	 text-align:left; width:426px; font-size:8px; margin-left:-11%;
+	
+	
+	}
+	.guanzhu-question{
+	 color:#999999;font-size:12px;
+	
+	}
+ 
+	.a-1{
+		 margin-left:20px;
+	
+	}
+ 
+	 .cc{
+		 text-align:left; margin-left:-94%; width:126px;
+			float: left;
+			width: 160px;
+			padding-top: 5px;
+		 
+ 
+	 }
+	.sc{
+	 color:#999999;
+	 font-size:8px;
+	
+	}
+	.sc2{
+		font-size:8px;
+		color:#0078b6;
+	
+	}
+	.xin{
+		 float:right; margin-right:35px; 
+	
+	}
+	.xin2{
+		 color:#b9b9b9;
+		 font-size:8px;
+	
+	}
+		
+		
+		
+		.caca{
+			 padding-top:19px;
+			 
+		margin-left: -50;
+		
+		
+		}
+		.zuijia-title{
+			 width:auto;
+			 margin-left:4%;
+			 margin-top:3%;
+		
+		}
+		
+		
+		.list1{
+			font-weight:bold; 
+			
+		}
+		.content{
+			margin-left:auto;
+			margin-right:auto;
+			height:440px;
+			width:1150px;
+			margin-top:30px;
+			
+		
+		}
+	
+		.list{
+			height:370px;
+			width:320px;
+			background-color:white;
+			padding:15px;
+			float:left;
+			margin-top:10px;
+		 
+			
+		}
+		.pic{
+			height:36px;
+			width:36px;
+			float:left;
+		
+		}
+	 
+		
+			.content1{
+			margin-left:auto;
+			margin-right:auto;
+			
+			width:1200px;
+			background-color:#FF7400;
+		
+		}
+	
+		.list2{
+			height:350px;
+			width:230px;
+			background-color:#e0e0e0;
+			padding:10px;
+			float:left;
+			margin-left:10px;
+			margin-bottom:15px;
+		
+			
+	
+		}
+		
+		.pic1{
+			height:36px;
+			width:36px;
+			float:left;
+		
+		}
+		.bottom{
+			
+			height:40px;
+			margin-right:auto;
+			margin-left:auto;
+			background-color:#406682;
+		}
+		.tiezi-title{
+			
+		color:#5883a3;
+		
+		}
+		.fatieren{
+			font-weight:bold; 
+		}
+		.guanzhu-num{
+			background-color:#FFFFFF;
+			height:40px; 
+			width:60px;
+			text-align:center;
+			border-left:1px solid  #000000; 
+			border-top:1px solid  #000000; 
+			border-right:1px solid  #000000;
+			border-bottom:0px solid #000000;
+		}
+		.huida-num{
+			background-color:#4b7390; 
+			height:40px; 
+			width:60px; 
+			text-align:center; 
+			border-left:1px solid  #000000;
+			border-top:1px solid  #000000; 
+			border-right:1px solid  #000000;
+			border-bottom:0px solid #000000;
+		
+		}
+		.keywords{
+		
+			margin-left:20px;
+			font-size:12px;
+			color:#426884;
+						
+		}
+		.zan-icon{
+			background-color:#FFFFFF; 
+			height:20px; 
+			width:60px; 
+			text-align:center;
+		
+		
+		}
+		.zan-num{
+			
+			color:#999999;
+			font-size:8px;
+		
+		}
+		
+		
+		.answer-name{
+		
+			color:#0078b6;
+			font-size:8px;
+		
+		}
+		
+		
+		
+		.pagination ul > li > a, .pagination ul > li > span {
+			float: left;
+			padding: 4px 12px;
+			line-height: 20px;
+			text-decoration: none;
+			background-color: #ffffff;
+			border: 1px solid #dddddd;
+		 
+		}
+ 	.pagination ul > li > a:hover, .pagination ul > li > a:focus, .pagination ul > .active > a, .pagination ul > .active > span {
+			background-color:#4b7390;
+			color:white;
+		}
+		.paging{
+			
+			border-left-width: 1px;
+			
+		
+			color:#999999;
+			margin-left:5px;
+			font-size:8px;
+		
+		}
+		.address{
+			color:#5883a3;
+		
+		}
+		.list-fy{
+		 
+			margin-left:40px;
+			white-space:nowrap;
+			padding:0 6px;
+			float:left;
+			 
+			position:relative
+		}
+		
+		.list-fy1{
+			white-space:nowrap;
+			overfloat:hidden;
+			float:left;
+			position:relative
+		}
+		.pic-title{
+			color:#5883a3;
+			font-size:8px;
+			
+		}
+		
+		.pic{
+		
+			margin-left:20px;
+			margin-top:3px;
+		}
+		
+		
+		.guanzhu1{
+			font-size:8px;
+			color:#cacaca;
+			
+		}
+		.dt{
+			font-weight:normal;
+		
+		}
+		a:hover, a:focus {
+		color: #005580;
+		text-decoration: none;
+		}
+		 
+	 
+		.qq{
+			float:left; width:324px;
+		
+		}
+		.xyz-1{
+			font-size:22px;
+		
+		}
+		
+		.question-left2{
+			float:left;
+		
+		}
+		.zan1{
+			padding-top:20px;
+		
+		}
+		.p-1{
+			 text-indent: 8mm;margin-top:20px;
+		
+		}
+		.xin-1{
+			
+			margin-top: -8;
+			margin-right: 5px;
+
+		}
+		.btn-info{
+		background-image: linear-gradient(to bottom, #2684A0, #2f96b4);
+		}
+ 

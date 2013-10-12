@@ -1,0 +1,36 @@
+#{extends 'main.html' /}
+<div class="opporcontent">
+<h1 style="margin-left:100px;">需要接机人信息</h1><a href="@{userInfo.pickupIndex}" style="margin-left:573px;">返回</a>
+#{list items:si,as:'studenInfor'}<br/>
+<div style="margin-left:100px; border:1px solid #e2e2e2; width:500px;">
+<b>姓名:</b>
+${studenInfor.siUsername}<br/>
+<b>性别:</b>
+${studenInfor.siSex}<br/>
+<b>联系电话:</b>
+${studenInfor.siTelphone}<br/>
+<b>邮箱:</b>
+${studenInfor.siTelphone}<br/>
+<b>学校:</b>
+${studenInfor.siSchool}<br/>
+<b>专业课程:</b>
+${studenInfor.simajor}<br/>
+<b>到达机场:</b>
+${studenInfor.siAirport}<br/>
+<b>到达日期:</b>
+${studenInfor.siDate}<br/>
+<b>到达时间:</b>
+${studenInfor.siTime}<br/>
+<b>是否接机:</b>
+${studenInfor.sipickup}<br/>
+<b>是否住宿:</b>
+${studenInfor.siStay}<br/>
+<b>行李:</b>
+${studenInfor.siLuggage}<br/>
+<b>备注:</b>
+${studenInfor.siRemarks}
+<br/>
+</div>
+#{/list}
+
+</div>

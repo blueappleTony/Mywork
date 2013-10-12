@@ -1,0 +1,148 @@
+#{extends 'main.html' /} #{set title:'create' /}
+ 
+<link href="../../public/stylesheets/datetimepicker.css" rel="stylesheet" media="screen">
+	<form action="@{Activities.next}" method="post"
+		accept-charset="${_response_encoding}" class="form-horizontal " style="width: 100%;" name="form1">
+		 <div class="control-group">
+					<label class="control-label"  >名称</label>
+					<div class="controls">
+						<input id="inputEmail"    type="text" 	name="a.name" value="${flash['a.name']}" /> <span class="error">#{error 'a.name' /}</span>
+					</div>
+				</div>
+			 
+				
+		 <div class="control-group ">
+			<label class="control-label">类型</label>
+			<div class="controls">
+				<select name="a.type"  >
+					<option selected>请选择：</option> 
+					#{list items:at,as:'at'}
+					<option value="${at.name}" ${flash['a.type']==at.name?"selected":""}>${at.name}</option>
+					 #{/list}
+				</select> <span class="error">#{error 'a.type' /}</span>
+			 </div>
+		  </div>
+
+				
+				<div class="control-group">
+					<label class="control-label" >开始日期</label>
+						<div class="controls">
+							 <div class="input-append date form_datetime" >
+							<input size="16" type="text" name="a.timeFrom" value="${flash['a.timeFrom']}" readonly style="width: 181px;">
+						 
+							<span class="add-on"><i class="icon-th"></i></span>
+							<span class="error">#{error 'a.timeFrom' /}</span>
+						</div>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label" >结束日期</label>
+					<div class="controls">
+						 <div class="input-append date form_datetime" >
+						<input size="16" type="text" name="a.timeTo" value="${flash['a.timeTo']}" readonly style="width: 181px;">
+						<span class="add-on"><i class="icon-th"></i></span>
+						 <span class="error">#{error 'a.timeTo' /}</span>
+					</div>
+					</div>
+				</div>
+				
+				 
+				 
+				<div class="control-group ">
+				   <label class="control-label">人数范围</label>
+						<div class="controls">
+							<select name="a.scope"  >
+								#{list items:s,as:'s'}
+									<option value="${s.scope}" ${flash['a.scope']==s.scope?"selected":""}>${s.scope}</option>
+								#{/list}
+							</select>
+							<span class="error">#{error 'a.scope' /}</span>
+						</div>
+			    </div>
+				<div class="control-group">
+					<label class="control-label" >费用</label>
+					<div class="controls">
+						<div class="input-prepend input-append">
+  
+						  <input style=" width: 180px;" name="a.money" value="${flash['a.money']}" id="appendedPrependedInput" type="text">
+						 <span class="add-on">$</span><span class="error">#{error 'a.money' /}</span>
+						</div>		
+				
+		
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label"  >联系方式</label>
+					<div class="controls">
+						<input id="inputEmail"    type="text"  name="a.contract" value="${flash['a.contract']}" /> <span class="error">#{error
+					'a.contract' /}</span>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label"  >地点</label>
+					<div class="controls">
+						<input id="inputEmail"    type="text" name="a.location" value="${flash['a.location']}" />
+				<span class="error">#{error 'a.location' /}</span>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label"  >邮编</label>
+					<div class="controls">
+						<input id="inputEmail"    type="text" name="a.zip" value="${flash['a.zip']}" /> <span
+					class="error">#{error 'a.zip' /}</span>
+					</div>
+				</div>
+			  
+				
+			 
+				
+				
+				<div class="control-group">
+					<label class="control-label"> 活动概要</label>
+					<div class="controls">
+						
+		<textarea name="a.summary" cols="36" rows="3" id="luggage" maxlength="40">${flash['a.summary']}</textarea>
+		<span class="error">#{error 'a.summary' /}</span>
+		<p><span id="progressbar1">0</span>/40</p>
+					</div>
+				</div>
+					<div class="control-group">
+					<label class="control-label">活动介绍</label>
+					<div class="controls">
+				 	<textarea name="a.intro" cols="36" rows="6" id="remarks">${flash['a.intro']}</textarea>
+					<span class="error">#{error 'a.intro' /}</span>
+					</div>
+				</div>
+				<div class="control-group">
+					<div class="controls">
+					<input type="submit" class="btn btn-info"  value="提交"> 
+					<input type="reset" class="btn" value="重置">
+					</div>
+				</div>
+	</form>
+	<div class="clearfix"></div>
+	 
+	 
+	 
+<script type="text/javascript" src=" ../../public/javascripts/jquery-1.8.3.min.js" charset="UTF-8"></script>	 
+<script type="text/javascript" src=" ../../public/javascripts/bootstrap-datetimepicker.js" charset="UTF-8"></script>
+<script type="text/javascript" src="../../public/javascripts/locales/bootstrap-datetimepicker.fr.js" charset="UTF-8"></script>
+<script type="text/javascript">
+   $(".form_datetime").datetimepicker({
+   
+        format: "yyyy-mm-dd  hh:ii",
+		autoclose: true, 
+		todayBtn: true,
+		startDate: "2013-9-11  10:00 ",
+        pickerPosition: "bottom-left",
+    });
+</script>         
+<script type="text/javascript">
+document.getElementById("luggage").onfocus = document.getElementById("luggage").onkeydown = document.getElementById("luggage").onkeyup = function(){
+document.getElementById("progressbar1").innerHTML = this.value.length;
+}
+</script>   
+ 
+	<!-- 这里是修改头像 -->
+
+ 

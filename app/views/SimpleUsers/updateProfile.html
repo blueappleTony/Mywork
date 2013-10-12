@@ -1,0 +1,96 @@
+#{extends 'main.html' /} #{set title:'updateProfile.html' /}
+<div>
+<form action="@{SimpleUsers.doUpdateProfile}" method="POST" class="form-horizontal"
+	accept-charset="${_response_encoding}">
+ 
+		<div class="control-group">
+					<label class="control-label"  >昵称</label>
+					<div class="controls">
+						<input  type="text" name="user.name" value="${user.name}"
+						  placeholder="请输入真实姓名"><span class="error">#{error 'name' /}</span>
+					</div>
+				</div>
+			 
+	 
+	<div class="control-group">
+		<label  class="control-label">性别</label>
+			<div class="controls">
+		 <input type="radio" name="user.gender" value="女"
+			${user.gender== "女"?"checked":""}  />女 <input type="radio"
+			name="gender" value="男" ${user.gender== "男"?"checked":""} />男 <span
+			class="error">#{error 'gender' /}</span>
+			</div>
+	</div>
+	<div class="control-group">
+		<label  class="control-label">年龄</label>
+		<div class="controls">
+		 <select name="user.age">
+		
+			<option value="0" ${user.age==0?"selected":""}>--</option> 
+			#{list items:18..60,as:'a'}
+			<option value="${a}" ${user.age==a?"selected":""}  >${a}</option>
+			#{/list}
+		</select> <span class="error">#{error 'age' /}</span>
+		</div>
+	</div>
+	<div class="control-group">
+		<label class="control-label">感情状况</label>
+		<div class="controls">
+		 <select name="user.ralationship" value="${user.ralationship}">
+		  <option >保密</option> 
+		  <option >单身</option> 
+		  <option >恋爱中</option> 
+		<option >已订婚</option> 
+		<option >已婚</option> 
+		<option  >分居</option> 
+		
+		<option >离异</option> 
+			
+			
+			</select>
+		</div>	
+			<span class="error">#{error 'ralationship' /}</span>
+			
+			
+		<!-- <div class="controls">
+		 <input type="text" name="user.ralationship"
+			value="${user.ralationship}" /> <span class="error">#{error
+			'ralationship' /}</span>
+			</div> -->
+	</div>
+
+	<div class="control-group">
+		<label class="control-label">家乡</label>
+		<div class="controls"> <input type="text" name="user.hometown"
+			value="${user.hometown}" /> <span class="error">#{error
+			'hometown' /}</span>
+			</div>
+	</div>
+	<div class="control-group">
+		<label class="control-label">学校</label> 
+		<div class="controls">
+		<input type="text" name="user.school"
+			value="${user.school}" /> <span class="error">#{error
+			'school' /}</span>
+			</div>
+	</div>
+	<div class="control-group">
+		<label class="control-label">联系方式</label>
+		<div class="controls">
+		 <input type="text" name="user.contract"
+			value="${user.contract}" /> <span class="error">#{error
+			'contract' /}</span>
+			</div>
+	</div>
+	<div class="control-group">
+		<label class="control-label">一句话介绍</label>
+		<div class="controls">
+		 <input type="text" name="user.selfIntro"
+			value="${user.selfIntro}" /> <span class="error">#{error
+			'selfIntro' /}</span>
+			</div>
+	</div>
+	<input type="hidden" name="user.id" value="${user.id}" /> 
+	<input	type="submit" class="btn btn-info" style="margin-left: 178px;margin-top: 12px;" value="更新" />
+</form>
+</div>

@@ -1,0 +1,512 @@
+#{extends 'main.html' /}
+#{set title:'searchPage.html' /}
+<script src="@{'/public/javascripts/jquery-1.6.4.min.js'}"
+	type="text/javascript" charset="${_response_encoding}"></script>
+<script src="@{'/public/javascripts/jquery.js'}"
+type="text/javascript" charset="${_response_encoding}"></script>
+<script type="text/javascript"> 
+
+$(document).ready(function(){
+	var searchQues=#{jsAction @QuestAnsw.searchQues(':ques')  /}
+		$('#submitbutton').click(
+		  function(){
+			  var q=$("#ques").val();
+			  $.get(searchQues({ques:q}),
+				  function(data) {
+	           		$('#showinfo').html(data);
+		       })
+		  })
+	});
+	
+	
+	
+var where = new Array(4);
+function comefrom(loca,locacity) {
+ this.loca = loca; this.locacity = locacity;
+}
+where[0] = new comefrom("请选择城市名","请选择学校名");
+where[1] = new comefrom("北京","清华大学|北京大学|广播电视大学|人民大学|民主大学");
+where[2] = new comefrom("上海","上海交通大学|同济大学|复旦大学|华东理工");
+where[3] = new comefrom("河南","郑州大学|河南大学|开封大学");
+where[4] = new comefrom("其它","西安交通大学|哈弗大学|剑桥大学");
+var province_obj;
+var city_obj;
+function init(province, city) {
+    province_obj = document.getElementById(province);
+    city_obj = document.getElementById(city);
+    with(province_obj) {
+
+        length = where.length - 1;
+
+        for(k=1;k<where.length;k++) {
+
+            options[k-1].text = where[k].loca;
+
+            options[k-1].value = where[k].loca;
+        }
+        options[0].selected = true;
+    }
+    with(city_obj) {
+        loca3 = (where[1].locacity).split("|");
+        length = loca3.length;
+        for(l=0;l<length;l++) {
+            options[l].text = loca3[l];
+            options[l].value = loca3[l];
+        }
+        options[0].selected = true;
+    }
+}
+function select() {
+    with(province_obj) {
+        var loca2 = options[selectedIndex].value;
+    }
+    for(i = 1;i < where.length;i++) {
+        if (where[i].loca == loca2) {
+            var loca3 = (where[i].locacity).split("|");
+            var loca4 = "";
+            //如果没有市级菜单
+            if (loca3 == "") {
+                city_obj.style.display = "none";
+                break;
+            } else {
+                city_obj.style.display = "inline";
+            }
+            for(j = 0;j < loca3.length;j++) {
+                if (loca3[j].replace(/(^\s*)|(\s*$)/g, "") != "") {
+                    with(city_obj) {
+                        length = loca3.length;
+                        options[j].text = loca3[j];
+                        options[j].value = loca3[j];
+                        loca4=options[selectedIndex].value;
+                    }
+                }
+            }
+            break;
+        }
+    }
+   // document.form1.local.value=loca2+loca4;
+}
+window.onload = function(){
+    //初始化，第一个参数是省级select标签id，第二个参数为市级select标签id
+    init('province', 'city');
+}
+	
+	function hideshowInfo(){
+		document.getElementById('showAllInfor').style.display='none';
+	}
+</script>
+
+<!-- 
+<div>
+	<form action="@{QuestAnsw.searchQues}"  method="post"    accept-charset="${_response_encoding}">	
+		<input type="text" style="height=200px;" id="ques" name="ques"  value="${flash.ques}"  />
+		<input type="button" id="submitbutton" value="查询"  onClick="hideshowInfo()"/> 
+	</form>
+	<a href="@{QuestAnsw.QuesIndex}">提问</a>
+	<p>
+		<a >
+			#{list items:t,as:'tag'}
+				<a calss="${tag==tag.tagName?'QuestAnsw':''}" href="@{QuestAnsw.searchTag(tag.tagName)}">${tag.tagName}</a> 
+			#{/list}
+		</a>
+	</p>
+	
+	<p>
+	 <form name="form1">
+		<a>国家和地区</a> 
+			<a>
+				<select name="Country">
+					#{list items:c,as:'country'}
+				     <option value="${country.id}">${country.name}</option>
+				     #{/list}
+				</select>
+			</a>
+			
+			<a>省份</a>
+			<a>
+				<select name="Province">
+					#{list items:p,as:'province'}
+				     <option value="${province.id}">${province.name}</option>
+				     #{/list}
+				</select>
+			</a>
+			<!-- 
+			<a>城市</a>
+			<a>
+				<select name="City">
+					#{list items:ci,as:'city'}
+				     <option value="${city.id}">${city.name}</option>
+				     #{/list}
+				</select>
+			</a>
+			<a>学校</a>
+			<a>
+				<select name="QuesSchool">
+					#{list items:q,as:'quesSchool'}
+				     <option value="${quesSchool.name}">${quesSchool.name}</option>
+                     #{/list}
+				</select>
+			</a>
+			 -->
+			 
+			<!-- 
+				<a>城市</a><select name="province" onChange = "select()" id="province"></select>　
+				<a>学校</a><select name="city" onChange = "select()" id="city"></select>
+			</form>
+			
+	</p>
+	<p>
+		<a>默认排序</a>		
+		<a>发布时间</a>
+		<a>回答数量</a>
+		<a>关注热度</a>
+	</p>
+	
+	
+	<p>
+		<a>热门回答</a>
+	</p>
+
+	<div id="showAllInfor" class="" style="border:1px solid red;" >
+	#{list items:aQues,as:'newQues'}<br/>
+		<p>
+			<a>标题<br/>${newQues.title}<br/>学校<br/>${newQues.school}</a><br/>
+		</p>
+		<p>
+			<a>标签<br/>${newQues.label}</a><br/>
+		</p>
+		<p>
+			<a>问题内容<br/>${newQues.content}</a><br/>
+		</p>
+		<p>
+			#{list items:aComen,as:'aCom'}<br/>
+				<a>回答<br/>${aCom.comment}</a><br/>
+			#{/list}
+		</p>
+	#{/list}
+	</div>
+	 <div id="showinfo" style="border:1px solid red;" >
+	 	#{list items:data,as:'a'}
+			<p>
+				<a><a style="color:red">标题:</a>${a.title}</a><br/>
+				<a><a style="color:red">标签:</a>${a.label}</a><br/>
+				<a><a style="color:red">学校:</a>${a.school}</a><br/>
+				<a><a style="color:red">内容:</a>${a.content}</a><br/><br/><br/>
+			</p>
+		#{/list}
+	 </div>
+</div>
+ -->
+ 
+ 
+<div class="opporcontent">
+		  <div class="question-left1">
+				<div class="question-left2">
+					<form action=" " method="get">
+						<input style="width:460px; height:36px; border: 3px solid  #5885a5;" class="question-text" placeholder="输入你想知道的问题..."
+						 type="text" style="height=200px;" id="ques" name="ques"  value="${flash.ques}" >
+						<input class="btn btn-info tiwen-btn" id="submitbutton" type="button"   onClick="hideshowInfo()" / value="搜索话题" src="/public/images/question.png" />
+						<a class="btn btn-info tiwen-btn1"  href="@{QuestAnsw.QuesIndex}"  src="/public/images/question.png" >我要提问</a>
+					</form>
+				</div>
+			</div>
+			
+			<div class="classify NO1">
+						<dl class="classify-dl clearfix">
+						<dt class="list-tit"><img src="/public/img/category.png">分类:</dt>
+						<div class="list-fy  on">
+								   <a href="#" class="quanbu"> 全部</a>
+						</div>
+						<dd class="list-fy ">
+							
+							#{list items:t,as:'tag'}
+									<a calss="${tag==tag.tagName?'QuestAnsw':''}  address" href="@{QuestAnsw.searchTag(tag.tagName)}">${tag.tagName}</a> 
+							#{/list}
+						</dd>
+					</dl>
+					
+					<dl class="classify-dl clearfix1">
+						<dt class="list-tit"><img src="/public/img/location.png">主题:</dt>
+					   <dl class="classify-dl clearfix">
+							<dd class="list-fy1">
+								   <a href="#" class="pic">
+												<img src="/public/img/zhuti.png">
+								   </a>
+							 </dd>
+							 <dd class="list-fy1">
+								   <a href="#" class="pic-title">生活百科</a>
+								   <label><a class="pic-title">222</a><span class="guanzhu1">人已关注</span></label>
+							 </dd>
+						</dl>
+					</dl>
+					
+					<ul id="channelSort" class="dressing clearfix">
+						<!--排序开始-->
+								<li class="on">
+								<strong>		
+								  <a href="#" class="sales1">默认排序</a>	 
+								</strong>
+								</li>
+								<li>		
+								  <a href="#" class="sales1">发布时间</a>
+								</li>		
+								<li>		
+								  <a href="#" class="sales1">回答数量</a>
+								</li>		
+								<li>		
+								  <a href="#" class="sales1">关注热度</a>				
+								</li>
+							 <!--排序结束-->	
+					</ul>
+			</div>
+</div>
+
+
+<div class="opporcontent">
+	<div class="form-horizontal ">
+					 <div class="control-group ">
+								<label class="xyz">
+									<span class="xyz-1">热门回答</span>
+								</label>
+					 </div>
+			<!--内容-->
+			<div  class=" group1">
+				<div id="showAllInfor">
+				#{list items:aQues,as:'newQues'}<br/>
+			<!-- 
+					<label class="woqu">
+							<a class="tiezi-title">我想去美国加州留学？请问那里的经济情况怎么样？加州的大学一般学费怎么样？</a>
+					</label>
+						<label class="userinforleft">
+										<div class="guanzhu-num">
+											<a class="guanzhuNO2">30</a>
+											<div>
+												<a class="guanzhu-font">关注</a>
+											</div>
+										</div>
+										<div class="huida-num">
+											<a class="guanzhuNO3">3</a>
+											<div>
+												<a class="huida-font">回答</a>
+											</div>
+										</div>
+									<div class="zan1">
+										<div class="zan-icon">
+											<img src="/public/images//1-2.png"><a class="zan-num">30</a>
+										</div>
+										 
+									</div>
+						</label>
+						<div class="controls">
+							<div>
+									<label class=" userinforright">
+											<div>
+												<span>
+													<a class="bq"> 标签:</a>
+												</span>
+												<span>
+													<a class="keywords"> 加州</a><a class="keywords"> 留学</a><a class="keywords">经济</a><a class="keywords">学费</a>
+												</span>
+												<div class="fatieren">
+												张少康，准留学生一枚。
+											</div>
+									       <p class="p-1">  加州有很多世界知名的高等学府，包括很多牛校，教学质量也很好，这两年经济危机对于加州的学校影响还是很大的，但是加州的学校还是非常不错的，一直是很多人比较向往的地方，学费是多少要看具体的学习了，不过加州的学校普遍要高于别的州。
+										  </p> 
+								<span><a href="#" class="guanzhu-question"><img src="/public/images/focus.png">关注问题</a>&nbsp;&nbsp;</span><span href="#" id="hd" class="guanzhu-question"><img src="/public/images/answer.png">我来回答</span>
+								<form action="" method="post">	
+								<textarea id="t"></textarea>
+								 <button class="btn   btn-info " id="b" type="button">发布回答</button> 
+							 	</form>
+									
+									
+								 </div>	
+							</label></div>
+						</div>
+			 	 	<div style="clear:both"></div>
+			 	 	 -->
+			 	 	 
+			 	 	 <label class="woqu">
+							<a class="tiezi-title">${newQues.title}</a>
+					</label>
+						<label class="userinforleft">
+										<div class="guanzhu-num">
+											<a class="guanzhuNO2">30</a>
+											<div>
+												<a class="guanzhu-font">关注</a>
+											</div>
+										</div>
+										<div class="huida-num">
+											<a class="guanzhuNO3">3</a>
+											<div>
+												<a class="huida-font">回答</a>
+											</div>
+										</div>
+									<div class="zan1">
+										<div class="zan-icon">
+											<img src="/public/images/1-2.PNG"><a class="zan-num">30</a>
+										</div>
+										 
+									</div>
+						</label>
+						<div class="controls">
+							<div>
+									<label class=" userinforright">
+											<div>
+												<span>
+													<a class="bq"> 标签:</a>
+												</span>
+												<span>
+													<a class="keywords">${newQues.label}</a>
+												</span>
+												<div class="fatieren">
+												张少康，准留学生一枚。
+											</div>
+											#{list items:aComen,as:'aCom'}<br/>
+												<a class="p-1">${aCom.comment}</a><br/>
+											#{/list}
+									      
+								<span><a href="#" class="guanzhu-question"><img src="/public/images/focus.png">关注问题</a>&nbsp;&nbsp;</span><span href="#" id="hd" class="guanzhu-question"><img src="/public/images/answer.png">我来回答</span>
+								<form action="" method="post">	
+								<textarea id="t"></textarea>
+								 <button class="btn   btn-info " id="b" type="button">发布回答</button> 
+							 	</form>
+								 </div>	
+							</label></div>
+						</div>
+			 	 			<div style="clear:both"></div>
+			 	 	 #{/list}
+			 	 	 </div>
+			 	 	 
+			 	 	 
+			 	 	 	 <div id="showinfo" >
+								#{list items:data,as:'a'}
+									<label class="woqu">
+										<a class="tiezi-title">${a.title}</a>
+									</label>
+									<label class="userinforleft">
+										<div class="guanzhu-num">
+											<a class="guanzhuNO2">30</a>
+											<div>
+												<a class="guanzhu-font">关注</a>
+											</div>
+										</div>
+										<div class="huida-num">
+											<a class="guanzhuNO3">3</a>
+											<div>
+												<a class="huida-font">回答</a>
+											</div>
+										</div>
+										<div class="zan1">
+											<div class="zan-icon">
+												<img src="/public/images//1-2.png"><a class="zan-num">30</a>
+											</div>
+										 
+										</div>
+									</label>
+						<div class="controls">
+							<div>
+									<label class=" userinforright">
+											<div>
+												<span>
+													<a class="bq"> 标签:</a>
+												</span>
+												<span>
+													<a class="keywords">${a.label}</a>
+												</span>
+												<div class="fatieren">
+													张少康，准留学生一枚。
+												</div>
+												${a.content}<br/>
+												<span><a href="#" class="guanzhu-question"><img src="/public/images/focus.png">关注问题</a>
+												</span><span href="#" id="hd" class="guanzhu-question">
+												<img src="/public/images/answer.png">我来回答</span>
+												<form action="" method="post">	
+													<textarea id="t"></textarea>
+								 					<button class="btn   btn-info " id="b" type="button">发布回答</button> 
+							 					</form>
+											</div>	
+									</label>
+							</div>
+						</div>
+			 	 			<div style="clear:both"></div>
+								#{/list}
+						 </div>
+			 	 	 
+			 	 	 
+			</div>	
+			
+			
+			
+			
+			
+			
+			 
+			
+			
+					
+		 
+			
+			
+				
+			<div class="row-fluid">
+					<div class="span12" style="margin-left:10%;">
+						<div class="pagination">
+						<ul>
+							<li>
+									<a href="#" class="paging">首页</a>
+								</li>
+								<li>
+									<a href="#" class="paging">上一页</a>
+								</li>
+								<li>
+									<a href="#" class="paging">1</a>
+								</li>
+								<li>
+									<a href="#" class="paging">2</a>
+								</li>
+								<li>
+									<a href="#" class="paging">3</a>
+								</li>
+								<li>
+									<a href="#" class="paging">...</a>
+								</li>
+								<li>
+									<a href="#" class="paging">6</a>
+								</li>
+								<li>
+									<a href="#" class="paging">下一页</a>
+								</li>
+								
+								<li>
+									<a href="#" class="paging">末页</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+	</div>
+	<div class="form-horizontal qq">
+				<div class="control-group caca">
+						<label class="control-label zuijia-title">
+									<span class="zh">最佳回答者</span>
+								</label>
+				</div>
+				<div class="a-1">
+						<label class="control-label" style="text-align:left;">
+							<div>
+								<img src="/public/images/head-sculpture_small_1.png">
+							</div>
+						</label>
+						<div class="controls">
+							<label class="cc"><a class="answer-name">刘纯阳</a>
+						
+								 <p>
+									<a class="sc">擅长:</a><a class="sc2"> 生物 计算机 人类学</a>
+								</p>
+							</label>
+							<label class="xin"><img src="/public/images/zan1.png" class="xin-1"><a class="xin2">521</a></label>
+						</div>
+				 </div>
+	</div>
+	<div style="clear:both"></div>
+</div>

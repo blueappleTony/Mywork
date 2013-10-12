@@ -1,0 +1,205 @@
+#{extends 'main.html' /}
+#{set title:'myActivity.html' /}
+
+<div class="user-conH">
+	<div class="row">
+<div class="use-f-left span2" style="clear: both;">
+
+	<a href="@{CSSAs.changeProfile(user.id)}" >	<img class="use-img img-polaroid"      style="width: 125px;" 
+			src="${user.profile}"></a>
+			
+			
+			
+	</div>
+		 
+	<div class="span8">
+	 
+			 <span class="use-f-a16"><strong style="font-size: 26px;">${user.name}</strong></span>
+					<a href="@{CSSAs.changePassword(user.id)}"> 密码</a>/
+ 					 <a href="@{CSSAs.ChangeEmail(user.id)}"> 邮箱</a>
+	  
+ 
+	<div style="padding-top: 20px; width: 774px; float: left;">
+		 
+		 
+			<p class="use-f-p">
+			 #{if user.peopleNumber}
+			<span class="userinfo-font-b">${user.peopleNumber}</span> 
+			<span class="userinfo-font-w">人,</span>
+			#{/if} 
+			#{if user.homepage} 
+			<span class="userinfo-font-w">主页：</span> 
+			<a class="userinfo-font-b" href="${user.homepage}">${user.homepage}，</a> 
+			#{/if} 
+		
+			#{if user.contract} 
+			<span class="userinfo-font-w">手机号</span> 
+			<span class="userinfo-font-b">${user.contract}</span> 
+			#{/if}
+			 
+		  <span> <img src="/public/images/edit.png">
+			</span> <a class="userinfo-font-w" style="color:#e2e2e2" href="@{CSSAs.updateProfile(user.id)}">编辑资料</a>
+			 
+			<p class="use-f-p"><a class="use-f-a16" style="color: #000000">签名:${user.selfIntro?user.selfIntro:'无'}</a>
+			</p>
+			<p style="padding-top: 20px;"><a class="btn btn-info use-but"
+				href="@{Activities.create}"> <img src="/public/images/flag.png">发起活动
+			</a> <a class="btn btn-info use-but" href="@{QuestAnsw.QuesIndex}"> <img
+					src="/public/img/question.png">我要提问
+			</a></p>
+	 
+	</div>
+ </div>
+ </div>
+ </div>
+	<div class="float-1"></div>
+	<div class="row">
+		<div class="span2"
+			style="margin-top: 155px; font-size: 15px; border-bottom: 1px solid #e2e2e2;">
+			<ul>
+				<li class="use-f-li" style="margin-bottom: 10px;"><span>
+						<img src="/public/images/Individual_center_activities.png">
+				</span> <a class="use-f-a16"   onClick="activity()">我的活动:</a> <a
+					class="user-f-c"><!-- 6次 --></a></li>
+				<li class="use-f-li"><span> <img
+						src="/public/images/Individual_center_answer.png">
+				</span> <a class="use-f-a16"   onClick="ques()">我的问答:</a> <a class="user-f-c"></a></li>
+			</ul>
+		</div>
+	<div class="span7"
+			style="margin-top: 55px; border: 1px solid #e2e2e2; padding: 10px;">
+			<div class="bs-docs-example" id="activity">
+				<ul id="myTab" class="nav nav-tabs">
+					<li class="active"><a href="#home" data-toggle="tab">发布的活动:</a></li>
+					<li><a href="#profile" data-toggle="tab">参加的活动:</a></li>
+					<li><a href="#profile1" data-toggle="tab">关注的活动:</a></li>
+
+				</ul>
+				<div id="myTabContent" class="tab-content">
+					<div class="tab-pane fade in active" id="home">
+					
+					
+					#{list items:postedActivity,as:'activity'}
+							<img src="${user.profile}" class="f_l img-polaroid" /> <span class="f_l">我活动</span><br />
+							<a href="@{Activities.detail(activity.id)}">${activity.name}</a><br />
+							<img alt="" style="width: 240px; margin-top: 20px;"
+								src="${activity.poster}"  class="img-polaroid">
+						</p>
+						<p class="ac_p" style="">活动时间： ${activity.timeFrom}至${activity.timeTo}
+							参加：${activity.joinerCount}人 关注：${activity.likerCount}人 浏览：
+							${activity.views}人</p>
+	#{/list}
+	
+	</div>
+	<hr />
+	
+
+					 
+					<div class="tab-pane fade" id="profile">
+
+						#{list items:JoinedActivity,as:'activity'}
+						
+						
+						
+						<img src="${user.profile}" class="f_l img-polaroid" /> <span class="f_l">我参加了活动</span><br />
+							<a href="@{Activities.detail(activity.id)}">${activity.name}</a><br />
+							<img alt="" style="width: 240px; margin-top: 20px;"
+								src="${activity.poster}"  class="img-polaroid">
+						</p>
+						<p class="ac_p" style="">活动时间： ${activity.timeFrom}至${activity.timeTo}
+							参加：${activity.joinerCount}人 关注：${activity.likerCount}人 浏览：
+							${activity.views}人</p>
+						#{/list}
+
+					</div>
+					<div class="tab-pane fade" id="profile1">
+						#{list items:LikedActivity,as:'activity'}
+							<img src="${user.profile}" class="f_l img-polaroid" /> <span class="f_l">我参加了活动</span><br />
+							<a href="@{Activities.detail(activity.id)}">${activity.name}</a><br />
+							<img alt="" style="width: 240px; margin-top: 20px;"
+								src="${activity.poster}"  class="img-polaroid">
+						</p>
+						<p class="ac_p" style="">活动时间： ${activity.timeFrom}至${activity.timeTo}
+							参加：${activity.joinerCount}人 关注：${activity.likerCount}人 浏览：
+							${activity.views}人</p>
+						#{/list}
+					</div>
+				</div>
+			</div>
+			
+			
+			
+			
+			
+			
+				<div class="bs-docs-example XX hide" id="QuesAnswer">
+				<ul id="myTab" class="nav nav-tabs">
+					<li class="active"><a href="#home1" data-toggle="tab">发布的问题:</a></li>
+					<li><a href="#profile2" data-toggle="tab">回答的问题:</a></li>
+					<li><a href="#profile3" data-toggle="tab">关注的问题:</a></li>
+					
+				</ul>
+				<div id="myTabContent" class="tab-content">
+					<div class="tab-pane fade in active" id="home1">
+						#{list items:CQues,as:'userQues'}
+							<li>
+								<a href="@{QuestAnsw.showQuesInfo(userQues.id)}">${userQues.title}</a>
+							</li>
+						#{/list}
+					</div>
+					<div class="tab-pane fade" id="profile2">
+
+						#{list items:CComment,as:'userQues'}
+							<li>
+								<a href="@{QuestAnsw.showQuesInfo(userQues.quesid)}">${userQues.quesTitle}</a>
+							</li>
+						#{/list}
+					</div>
+					<div class="tab-pane fade" id="profile3">
+						#{list items:CFQues,as:'userQues'}
+							<li>
+								<a href="@{QuestAnsw.showQuesInfo(userQues.quesId)}">${userQues.quesTitle}</a>
+							</li>
+						#{/list}
+					</div>
+				</div>
+		 </div>
+		 
+		 
+		 
+	</div>
+</div>
+#{set 'Scripts'}
+<script type="text/javascript" src="@{'public/javascripts/bootstrap-tab.js'}"></script>
+<script type="text/javascript">
+	$('#myTab a').click(function(e) {
+		e.preventDefault();
+		$(this).tab('show');
+	})
+	
+	
+		
+	function ques(){
+		$("#activity").addClass("hide");
+		$("#QuesAnswer").removeClass("hide");
+		
+	
+	}
+	function activity(){
+		
+		
+		$("#QuesAnswer").addClass("hide");
+		$("#activity").removeClass("hide");
+	
+	}
+	
+	
+	
+	
+	
+	
+	
+</script>
+#{/set}
+	
+ 

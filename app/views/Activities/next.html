@@ -1,0 +1,48 @@
+#{extends 'main.html'  /}
+#{set title:'next.html' /}
+ 
+ <link href=" /public/HeadPortrait/main.css" rel="stylesheet" type="text/css">
+        <link href="  /public/HeadPortrait/jquery.Jcrop.min.css" rel="stylesheet" type="text/css">
+<div class="row" >
+		<div class="span2">  
+		<h3>上传海报：</h3>
+		</div>   
+		<div class="span6">  
+        <div class="demo">
+         
+ 
+                <!-- upload form -->
+                <form id="upload_form" enctype="multipart/form-data" method="post" action="@{Activities.post}" onsubmit="return checkForm()">
+                    <!-- hidden crop params -->
+                    
+                    <input type="hidden" id="x1" name="left">
+                    <input type="hidden" id="y1" name="top">
+                    <input type="hidden" id="x2" name="height">
+                    <input type="hidden" id="y2" name="width">
+					<input type="hidden" name="id" value="${id}" />
+                        <h4>第一步:请选择海报</h4>
+                    <div><input type="file"  name="poster" id="image_file" onchange="fileSelectHandler()"></div>
+
+                    <div class="error"></div>
+						 
+                    <div class="step2">
+                      <h4>第二步:请对海报进行剪切</h4>
+                        <img id="preview" >
+ 				
+                        <div class="info hide" >
+                            <label>File size</label> <input type="text" id="filesize" name="filesize">
+                            <label>Type</label> <input type="text" id="filetype" name="filetype">
+                            <label>Image dimension</label> <input type="text" id="filedim" name="filedim">
+                            <label>W</label> <input type="text" id="w" name="w">
+                            <label>H</label> <input type="text" id="h" name="h">
+                        </div>
+						<br/>
+						 
+                        <input type="submit" value="上传">
+                    </div>
+                </form>
+              </div>
+               </div>
+        </div>
+ 
+ 

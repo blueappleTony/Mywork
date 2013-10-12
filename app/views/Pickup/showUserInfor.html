@@ -1,0 +1,25 @@
+#{extends 'main.html' /}
+<div class="opporcontent">
+<h1 style="margin-left:100px;">接机志愿者全部信息</h1><a href="@{userInfo.pickupIndex}" style="margin-left:573px;">返回</a>
+#{list items:us,as:'ss'}
+<div style="margin-left:100px; border:1px solid #e2e2e2; width:500px;">
+<b>姓名：</b>
+${ss.pkUsername}<br/>
+<b>性别</b>
+${ss.pkSex}<br/>
+<b>邮箱:</b>
+${ss.pkEmail}<br/>
+<b>电话：</b>
+${ss.pkTelphone}<br/>
+<b>车型：</b>
+${ss.pkCar}<br/>
+<b>接机时间:</b>
+${ss.pkDate}<br/>
+<b>备注:</b>
+${ss.pkCheat}<br/>
+<br/>
+</div>
+#{/list}
+
+
+</div>

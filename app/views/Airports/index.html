@@ -1,0 +1,261 @@
+#{extends 'main.html' /} #{set title:'index.html' /}
+<div >
+#{if connectedSimpleUser}
+#{if connectedSimpleUser.isAdmin}
+ 
+#{/if}
+#{/if}
+</div>
+<script type="text/javascript" src="/public/javascripts/jquery.js"></script>
+<script type="text/javascript"> 
+
+$(function(){
+		$('.click').click(function(){
+			$('.bg').css({'display':'block'});
+			$('.content').css({'display':'block'});
+		});
+		$('.bg').click(function(){
+			$('.bg').fadeOut(200);
+			$('.content').fadeOut(200);
+		});
+	});
+function closeUserinfo(){
+	$('.bg').css({'display':'none'});
+	$('.content').css({'display':'none'});
+}
+
+
+$(function(){
+		$('.click_Vol').click(function(){
+			$('.bg_Vol').css({'display':'block'});
+			$('.content_Vol').css({'display':'block'});
+		});
+		$('.bg').click(function(){
+			$('.bg_Vol').fadeOut(200);
+			$('.content_Vol').fadeOut(200);
+		});
+	});
+	
+	
+	function guanbi(){
+		$('.bg_Vol').css({'display':'none'});
+		$('.content_Vol').css({'display':'none'});
+	}
+</script>
+
+<style type="text/css">
+.bg{
+	display:none;
+	position:fixed;
+	width:100%;
+	height:100%;
+	background:#000;
+	z-index:2;
+	top:0;
+	left:0;
+	opacity:0.7;
+	}
+.content{
+	display:none;
+	width:500px;
+	height:470px;
+	position:fixed;
+	top:50%;
+	margin-top:-200px;
+	background:#f9f8f8;
+	z-index:3;
+	left:50%;
+	margin-left:-250px;
+	}
+.bg_Vol{
+	display:none;
+	position:fixed;
+	width:100%;
+	height:100%;
+	background:#000;
+	z-index:2;
+	top:0;
+	left:0;
+	opacity:0.7;
+	}
+.content_Vol{
+	display:none;
+	width:500px;
+	height:470px;
+	position:fixed;
+	top:50%;
+	margin-top:-200px;
+	background:#f9f8f8;
+	z-index:3;
+	left:50%;
+	margin-left:-250px;
+	}
+.us-top{
+	height:35px;
+	width:500px;
+	background-color:#5b83a0;
+}
+.f-left{
+float:left;
+padding-top:10px;
+}
+.f-right{
+float:right;
+padding-top:5px;
+}
+.us-con{
+	width:500px
+	height:200px;
+	padding-top:20px;
+	
+}
+.us-img{
+	height:90px;
+	width:90px;
+	padding-left:20px;
+	float:left;
+}
+.us-font{
+	font-size:18px;
+	font-weight:bold;
+	color:#000000;
+}
+.us-font-qianming{
+	font-size:12px;
+	color:#666666;
+}
+.us-img-size{
+	height:30px;
+	float:right;
+	padding-right:20px;
+}
+.us-lick{
+	height:30px;
+}
+.us-ping{
+height:15px;
+}
+.a-f{
+	font-size:12px;
+}
+.us-li{
+line-height:18px !important;
+}
+.userinfo-font-w{
+	font-size:12px;
+	color:#999999;
+}
+.userinfo-font-b{
+	font-size:12px;
+}
+.us-act-s{
+	width:20px; 
+	height:20px; 
+	background-color:#336699;
+}
+.us-act-a-num{
+	text-align:center;
+	color:#FFFFFF; 
+	font-size:12px;
+}
+.us-act-a-sty{
+	font-size:12px; 
+	padding-left:10px;
+}
+.us-li-j{
+line-height:30px;
+}
+.userinfo-l{
+width:500px; 
+height:25px; 
+background-color:#d7dee4; 
+padding-top:5px;
+}
+</style>
+<div  style="height:500px;">
+	<div style="float:left; width:512px; height:430px; padding-top:20px;" >
+		<div style="width:500px; height:300px; padding-left:12px;">
+			<img src="../public/images/GIF_airplane.gif">
+		</div>
+		#{if isSimpleUser}
+		<div style="margin-left:200px; margin-top:35px; " class="click">
+			<a  class="btn btn-info"  >
+				<img src="../public/images/feiji.png"> 
+				我需要接机
+			</a>
+		</div>
+		#{/if}
+		
+		#{if isCSSA}
+		<div style="margin-left:200px; margin-top:35px; ">
+			<a  class="btn btn-info"  href="@{Airports.stuInfo(username)}">
+				<img src="../public/images/feiji.png"> 
+				查看需要接机人信息
+			</a>
+		</div>
+		#{/if}
+	</div>
+	<div style="float:left; width:512px; height:430px;  padding-top:20px;" >
+			<div style="width:500px; height:300px; padding-right:12px;">
+				<img src="../public/images/GIF_car.gif">
+			</div>
+			#{if isSimpleUser}
+			<div style="margin-left:200px; margin-top:35px;" class="click_Vol">
+				<a class="btn btn-info" >
+					<img src="../public/images/button_car.png">
+					我是志愿者
+				 </a>
+			</div>
+			#{/if}
+			
+			#{if isCSSA}
+			<div style="margin-left:200px; margin-top:35px;" >
+				<a class="btn btn-info"  href="@{Airports.volInfoInfo(username)}">
+					<img src="../public/images/button_car.png">
+					查看志愿者信息
+				 </a>
+			</div>
+			#{/if}
+	</div>
+</div>
+
+ <div class="bg"></div>
+ <div class="content">
+	<div class="us-top">
+ 		<div class="f-left">
+ 			<span style="padding-left:10px;">选择学校</a>
+ 		</div>
+ 		<div class="f-right" style="height:30px; width:50px; background-color:#577d99; text-align:center;">
+ 			<a style= "color:#ffffff;"  onClick="closeUserinfo()">关闭</a>
+ 		</div>
+ 	</div>
+ 		<dl class="classify-dl clearfix " style="padding-left:1px;">
+				#{list items:ls,as:'school'}
+					<dd class="list-fy on" style="margin-left:15px;">
+						<a class=" ${school==school.name?'Airports':''}  address" href="@{Airports.addStuInfo(school.id)}" >${school.name}</a>
+					</dd>
+				#{/list}
+	    </dl>
+ 	
+ </div>
+ 
+ <div class="bg_Vol"></div>
+ <div class="content_Vol">
+	<div class="us-top">
+ 		<div class="f-left">
+ 			<span style="padding-left:10px;">选择学校</a>
+ 		</div>
+ 		<div class="f-right" style="height:30px; width:50px; background-color:#577d99; text-align:center;">
+ 			<a style= "color:#ffffff;"  onClick="guanbi()" >关闭</a>
+ 		</div>
+ 	</div>
+ 		<dl class="classify-dl clearfix " style="padding-left:1px;">
+				#{list items:ls,as:'school'}
+					<dd class="list-fy on" style="margin-left:15px;">
+						<a class=" ${school==school.name?'Airports':''}  address" href="@{Airports.addVolInfo(school.id)}" >${school.name}</a>
+					</dd>
+				#{/list}
+	    </dl>
+ </div>
+ 
+ <div><a class="botton" href="@{ExportStuinfo.exportStu(username)}">导出</a></div>

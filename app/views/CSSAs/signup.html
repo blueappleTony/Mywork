@@ -1,0 +1,117 @@
+#{extends 'main.html' /}
+#{set title:'signup.html' /}
+
+<h4 id="title">CSSA注册</h4>
+
+
+<form id="signup" action="@{CSSAs.register}"  class="form-horizontal"  method="POST" accept-charset="${_response_encoding}">
+	
+	 
+	<p>
+	<div class="control-group">
+		<label  class="control-label">组织名称</label>
+		
+		<div class="controls">
+			<select name="name"  >
+					<option selected>请选择：</option> 
+					#{list items:sch,as:'at'}
+						<option value="${at.name}" ${flash.name==at.name?"selected":""}>${at.name}</option>
+					 #{/list}
+			</select> 
+		</div>
+		</div>
+	</p>
+	<p>
+	<div class="control-group">
+		<label  class="control-label">联系邮箱</label>
+		<div class="controls">
+		<input type="text" name="email" value="${flash.email}" id="email" />
+		<span class="error">#{error 'email' /}</span>
+		</div>
+		</div>
+	</p>
+	<p>
+	<div class="control-group">
+		<label  class="control-label">密码</label>
+			<div class="controls">
+			<input type="password" name="password" value="${flash.password}" id="password" />不少于7个字符 <span class="error">#{error 'password' /}</span>
+			</div>
+		 </div>
+		</p>
+		<p>
+		<div class="control-group">
+		<label  class="control-label">密码重复</label>
+			<div class="controls">
+			<input type="password" name="password2" value="${flash.password2}" id="password2" /> <span class="error">#{error 'password2' /}</span>
+			</div>
+		</div>
+	</p>
+	<p>
+	<div class="control-group">
+		<label  class="control-label">官方主页</label>
+		<div class="controls">
+		<input type="text" name="homepage" value="${flash.homepage}"  />
+		<span class="error">#{error 'homepage' /}</span>
+		</div>
+		</div>
+	</p>
+	<p>
+	<div class="control-group">
+		<label  class="control-label">成员人数</label>
+		<div class="controls">
+		<select name="peopleNumber">
+		<option selected="selected"value="1-20">1-20</option>
+		<option value="20-50">20-50</option>
+		<option value="50-100">50-100</option>
+		<option value="100-200">100-200</option>
+		<option value="200及以上">200及以上</option>
+		</select>
+	 
+		<span class="error">#{error 'people_number' /}</span>
+		</div>
+		</div>
+	</p>
+	<p>
+	<div class="control-group">
+		<label  class="control-label">组织简介</label>
+		<div class="controls">
+		<input type="text" name="selfIntro" value="${flash.selfIntro}" />
+		<span class="error">#{error 'selfIntro' /}</span>
+		</div>
+		</div>
+	</p>
+	<p>
+	<div class="control-group">
+		<label  class="control-label">申请人</label> 
+		<div class="controls">
+		<input type="text" name="applicant" value="${flash.applicant}" />
+		<span class="error">#{error 'applicant' /}</span>
+		</div>
+		</div>
+	</p>
+	<p>
+	<div class="control-group">
+		<label  class="control-label">申请人职称</label>
+		<div class="controls">
+		<input type="text" name="applicantTitle" value="${flash.applicantTitle}"/>
+		<span class="error">#{error 'applicantTitle' /}</span>
+		</div>
+	</div>
+	</p>
+	<p>
+	<div class="control-group">
+		<label  class="control-label">联系方式</label>
+		<div class="controls">
+		<input type="text" name="contract" value="${flash.contract}"  />
+		<span class="error">#{error 'contract' /}</span>
+		</div>
+		</div>
+	</p>
+	
+	<p class="buttons" style="margin-left:180px;">
+		<input type="submit" value="注册" class="btn btn-primary btn-large" id="signupButton" />
+		<input type="reset" value="重置" class="btn  btn-large"  />
+	</p>
+		
+</form>
+ <div style="clear:both;"></div>

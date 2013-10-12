@@ -1,0 +1,470 @@
+		body{
+			margin:0px;
+			border:0px;
+			font-family:微软雅黑;
+			font-size:14px;
+			
+		}
+		
+		
+	
+		
+		
+		 
+	.item img{
+		width:1366px;
+		height:500px;
+	}
+	.top{
+		position: relative;
+	}
+
+	
+		
+		
+		
+		
+		
+		
+		.opp-1{
+		 float:left; position:absolute; width:38%; top: 15%; left:15%;}
+		.opp-2{ float:none; z-index:-9999; position:absolute; height:428px;}
+		
+		.title-pic{
+			width:100%;
+			 			
+			background-repeat:no-repeat; 
+			background-position:top; 
+			 
+			margin:auto;
+			 
+		}
+		
+		
+		#login{
+			height:400px;
+			width:250px;
+			background-color:rgba(0,0,0,0.6);
+			margin-left:60%;
+			padding:1%;
+			 position:absolute;
+			 top:0px;
+			
+		}
+		
+		.fm{
+			padding-top:5px;
+			margin-left:15px;
+		}
+		#login-font,#login-font1{
+			margin-top:35%;
+			color:white;
+			font-size:16px;
+		}
+		
+		
+		
+		#login-font,#login-font2{
+			float:left;
+		
+		}
+		#login-font1,#login-font3{
+			 
+			float:right;
+		 
+			
+		}
+		
+		.flag{
+			margin-right:20px;
+		
+		}
+		
+		#login-font2,#login-font3{
+		
+			margin-top:7.3%;
+			color:white;
+			 
+		  
+		}
+		 
+	 
+		.small-title2-1{
+			margin-top:22px;
+			float:left;
+			color:red;
+		}
+		
+		.small-title3-1{
+			float:right;
+			margin-top:25px;
+		
+			color:#B0C4DE 
+		}
+		
+		.small-title4-1{
+			color:skyblue;
+			font-size:16px;
+		
+		}
+		
+		
+		
+		
+		.small-title2-2{
+		 
+			margin-top:22px;
+			float:left;
+			color:#0072ff
+		}
+		
+		.small-title3-2{
+		 
+			margin-top:22px;
+			float:right;
+			color:#B0C4DE;
+		
+		}
+		 
+		.small-title4-2{
+			 
+			margin-top:22px;
+			color:skyblue;
+			font-size:16px;
+		}
+		 
+		.small-title2-3{
+			 
+			margin-top:22px;
+			float:left;
+			color:#ff9600
+		}
+	
+		.small-title3-3{
+			 color:#B0C4DE;
+			float:right;
+			 margin-top:22px;
+			 
+		 
+		
+		}
+		.small-title4-3{
+			color:skyblue;
+			font-size:16px;
+		}
+		
+		
+		.small-title2-4{
+			 
+			margin-top:22px;
+			float:left;
+			color:#17bb06;
+		}
+		
+		.small-title3-4{
+			color:#B0C4DE;
+			float:right;
+			 margin-top:22px;
+		 
+		
+		}
+		.small-title4-4{
+		 color:skyblue;
+		 font-size:16px;
+		
+		}
+		
+		
+		
+		#email,#password,#password2,#username{
+			width:80%;
+			margin-bottom:10px;
+			height: 30px;
+			background-repeat:no-repeat; 
+			background-position:2% 50%; 
+			padding-left:28px;
+		
+		}
+		 #email{
+		
+			 margin-top:20px;
+			 background-color:white;
+			background-image: url(../img/user.png); 
+		 	
+		}
+		#password{
+		 background-image: url(../img/password.png); 
+		 }
+		#password2{
+			 background-image: url(../img/password.png); 
+		 }
+		#username{
+			 background-image: url(../img/username.png); 
+		 }
+		#button-denglu{
+			margin-top:10px;
+			 width:95%;
+			margin-bottom:10px;
+			
+		}
+		.btn-info{
+			background-image: linear-gradient(to bottom, #5d90b5,#2f96b4);
+			background-color:#5d90b5;
+		 
+		
+		}
+		.btn-info:hover{
+		
+			background-color:#2f96b4;
+		
+		}
+		.btn-1{
+			float:right;
+		}
+	 
+		#remember{
+			
+			float:left;
+			 
+		}
+		.rem{
+			color:white;
+			 
+		}
+	
+		#forget{
+			
+			float:right;
+			color:white;
+		}
+		.hide{
+			margin-left:3%;
+		
+		}
+		
+		.containers{
+			width:73%;
+			 
+			margin-right:auto;
+			margin-left:auto;
+			
+			
+		}
+		
+		.left1{
+			width:48%;
+			
+			background-color:white;
+			float:left;
+			overflow:hidden;
+		}
+		.small-title{
+			color:#406682;
+			font-size:20px;
+			margin-top:20px;
+			border-top:20px;
+			display:block;
+			float:left;
+			 
+			
+		
+		}
+		.small-title2{
+			font-size:12px;
+			margin-top:22px;
+			float:left
+			
+		}
+		.pic-5{
+			height:10%;
+			width:48%;
+			 float:right;
+			 
+			 position:relative;
+			 
+		}
+		.pic-6{
+			height:10%;
+			width:48%;
+			float:left; 
+		}
+		
+		.right1,.left2,.right2{
+			width:48%;
+			background-color:white;
+			overflow:hidden;
+		
+		}
+		
+		
+		
+		.right1{
+			 float:right;
+			 
+		}
+	
+		.left2{
+		  
+			float:left;
+		 margin-top:20px;
+		}
+		.right2{
+			 float:right;
+			 margin-top:20px;
+		 }
+	
+		.high1{
+			border-bottom:1px solid #D8D0E9;
+			font-size:13px;
+			padding:5px;
+			padding-bottom: 60px;
+		}
+		.list1{
+			margin:14px 0px;
+		 
+			color:white;
+		 
+		}
+		
+		
+		.bottom{
+			
+			height:40px;
+			margin-right:auto;
+			margin-left:auto;
+			background-color:#406682;
+		}
+		
+		.left_title,.left_title1,.left_title2,.left_title3,.left_title4{
+			height:20px;
+			width:40px;
+			overflow:hidden;
+			border-radius: 5px;
+			padding:2px;
+			font-size:12px;
+			float:left;
+			margin-right:10px;
+			text-align:center;
+			list-style-type: none;
+
+		
+		
+		}
+		
+		
+		.left_title{
+			background-color:#5282a5;
+			
+		}
+		.left_title1{
+			background-color:red;
+		}
+		.left_title2{
+			background-color:#0072ff;
+			 
+		}
+		.left_title3{
+			background-color:#ff9600;
+		}
+		.left_title4{
+			background-color:#17bb06;
+			 
+		}
+	 .container-fluid{
+		 background-color:#5282a5; 
+	 }
+	
+	.bottom-list{
+	
+		color:white;
+	
+	
+	}
+	
+	
+		.content-title1{
+			color:red;
+		
+		}
+		
+		.content-title2{
+			color:#0072ff;
+		
+		}
+		.content-title3{
+		 color:#ff9600; 
+		}
+		.content-title4{
+			color:#17bb06;
+		}
+		
+		
+		
+		
+		.btn-jieji{
+		
+			 float:right;
+			 margin-right:20px;
+			 position:relative;
+			 
+		
+		}
+		
+		
+		.zhuce-btn{
+	 	width: 238px !important;
+		}
+		 
+		.student{
+			color:#8f8f8f;
+		 
+			font-size:14px;
+			
+		}
+		
+		ul{
+			margin-left:0px;
+		
+		
+		}
+		
+		a:hover{
+
+			
+			text-decoration:none;
+			color:#0293fd
+			
+		}	
+			
+		.bottom_pic{
+			margin-top:8px;
+			margin-left:10px;
+			
+		}
+		
+		#bottom-nav{
+		
+			margin-left:30%;
+		 
+		}
+		
+		.text-error {
+			color:red;
+		 
+		}
+				
+		
+		.wenzi{
+			
+			display:inline;
+			text-align:center; 
+			
+		}
+		
+		
+		
+		
+	.navbar-inverse .nav > li > a {
+		color: #FFFAFA;
+		
+	}

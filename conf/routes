@@ -1,0 +1,148 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                                      Application.index
+
+#SimpleUsers Registration/Authentication
+GET		/simple/signup									SimpleUsers.signup
+POST	/simple/signup									SimpleUsers.register
+GET		/simple/login									SimpleUsers.login
+POST	/simple/login									SimpleUsers.authenticate
+GET		/simple/logout									SimpleUsers.logout
+GET		/simple/signup/{uuid}							SimpleUsers.confirmRegistration
+GET		/simple/confirmation/{uuid}						SimpleUsers.resendConfirmation
+GET		/simple/show/{id}								SimpleUsers.show
+GET		/simple/changepassword/{id}						SimpleUsers.changePassword
+POST	/simple/changepassword							SimpleUsers.doChangePassword
+GET		/simple/updateprofile/{id}						SimpleUsers.updateProfile
+POST	/simple/updateprofile							SimpleUsers.doUpdateProfile
+GET		/simple/changeemail/{id}						SimpleUsers.changeEmail
+POST	/simple/changeemail								SimpleUsers.dochangeEmail
+GET		/simple/forgetpassword							SimpleUsers.forgetpassword
+POST	/simple/forgetpassword							SimpleUsers.doforgetpassword
+GET		/simple/resetpassword/{uuid}					SimpleUsers.resetPasswordConfirmation
+POST	/simple/resetpassword							SimpleUsers.doResetPassword
+GET		/simple/changeprofile/{id}						SimpleUsers.changeProfile
+POST	/simple/changeprofile/{f}/{left}/{top}/{height}/{width}	SimpleUsers.doChangeProfile
+GET		/simple/infocenter/{id}							SimpleUsers.infoCenter
+GET		/QuestAnsw/userQues								QuestAnsw.userQues
+
+
+GET		/simple/myactivity								SimpleUsers.myActivity
+
+
+
+
+GET		/QuestAnsw/userQuesAnsw								QuestAnsw.userQues
+
+#CSSAs Registration/Authentication
+GET		/cssa/signup									CSSAs.signup
+POST	/cssa/signup									CSSAs.register
+GET		/cssa/login										CSSAs.login
+POST	/cssa/login										CSSAs.authenticate
+GET		/cssa/logout									CSSAs.logout
+GET		/cssa/signup/{uuid}								CSSAs.confirmRegistration
+GET		/cssa/confirmation/{uuid}						CSSAs.resendConfirmation
+GET		/cssa/show/{id}									CSSAs.show
+GET		/cssa/changepassword/{id}						CSSAs.changePassword
+POST	/cssa/changepassword							CSSAs.doChangePassword
+GET		/cssa/updateprofile/{id}						CSSAs.updateProfile
+POST	/cssa/updateprofile								CSSAs.doUpdateProfile
+GET		/cssa/changeemail/{id}							CSSAs.changeEmail
+POST	/cssa/changeemail								CSSAs.dochangeEmail
+GET		/cssa/forgetpassword							CSSAs.forgetpassword
+POST	/cssa/forgetpassword							CSSAs.doforgetpassword
+GET		/cssa/resetpassword/{uuid}						CSSAs.resetPasswordConfirmation
+POST	/cssa/resetpassword								CSSAs.doResetPassword
+GET		/cssa/changeprofile/{id}						CSSAs.changeProfile
+POST	/cssa/changeprofile/{f}/{left}/{top}/{height}/{width}	CSSAs.doChangeProfile
+GET		/cssa/infocenter/{id}							CSSAs.infoCenter
+GET		/cssa/myactivity								CSSAs.myActivity
+
+
+#Airport
+GET		/airport								    Airports.index
+GET		/airport/stuinfo/{id}						Airports.addStuInfo
+POST	/airport/stuinfo/{schoolId}					Airports.doAddStuInfo
+GET		/airport/volinfo/{id}						Airports.addVolInfo
+POST	/airport/volinfo/{schoolId}					Airports.doAddVolInfo
+GET		/airport/export								Airports.exportStu
+GET     /Airports/stuInfo/{username}                Airports.stuInfo
+GET     /Airports/volInfoInfo/{username}            Airports.volInfoInfo
+
+
+GET     /ExportStuinfo/exportStu/{username}                    ExportStuinfo.exportStu
+
+
+#Pickup
+GET		/pickup									   Pickup.index
+GET  	/pickup/pickupIndex                        Pickup.pickupIndex
+GET  	/pickup/studentinfo                       Pickup.registerStudentInfo
+GET		/pickup/volunteerinfo						Pickup.registerVolunteerInfo
+GET  	/pickup/showUserInfor                      Pickup.showUserInfor
+GET  	/pickup/userInfo                           Pickup.userInfo
+GET  	/pickup/stuAddSuccess                      Pickup.stuAddSuccess
+POST 	/pickup/stuAddSuccess                      Pickup.presentStudentInfo
+GET  	/pickup/disStuDetail/{id}                  Pickup.disStuDetail
+GET  	/pickup/changePuUser/{id}                  Pickup.changePuUser
+GET  	/pickup/updateUserInfo                     Pickup.updateUserInfo
+GET 	/pickup/changePuStudents/{id}            Pickup.changePuStudents
+ 
+POST  	/pickup/updateUserInfo                   Pickup.updateUserInfo
+POST  	/pickup/updateStuSuccess                 Pickup.updateStuSuccess 
+
+#Activities
+GET		/activity								Activities.index
+GET		/activity/create						Activities.create
+POST	/activity/next							Activities.next
+POST	/activity/post							Activities.post
+GET		/activity/detail/{id}					Activities.detail
+GET		/activity/filtertype/{name}				Activities.filterType
+GET		/activity/filterPeriod/{days}			Activities.filterPeroid
+GET		/activity/filterPeriodWeekend			Activities.filterPeroidWeekend
+GET		/activity/filterScope/{scope}			Activities.filterScope
+POST	/activity/filterLocation				Activities.filterLocation
+GET 	/activity/pagination/{page}				Activities.getMore
+POST 	/activity/pagination/{page}				Activities.getMore
+GET		/activity/userthumb/{id}				Activities.userThumb
+
+#QA
+GET		/qa										QAs.index
+
+
+#Charity
+GET     /wel		 			                         	Charities.wel
+POST    /charity/{pageNo}									Charities.wel
+GET     /charity/fabu										Charities.fabu
+POST	/charity/add                                 		Charities.wel
+GET		/charity/add										Charities.wel
+GET    	/charity/welfare/{id}								Charities.welfare
+GET 	/charity/edit/{id}/{pageNo}							Charities.edit
+GET		/charity/del/{id}/{pageNo}							Charities.wel
+GET		/charity/{pageNo} 									Charities.pigination
+ 
+
+#Question and answer
+POST /QuestAnsw/QuesIndex                              QuestAnsw.dispAddQues
+GET	 /QuestAnsw/dispAddQues               		       QuestAnsw.comments
+GET  /QuestAnsw/showQuesInfo/{id}                      QuestAnsw.showQuesInfo
+POST /QuestAnsw/searchpage               		       QuestAnsw.answerRapidly
+GET	 /QuestAnsw/{pageNum}		                       QuestAnsw.Quespaging
+GET  /QuestAnsw/deleteQues/{id}                        QuestAnsw.deleteQues
+GET  /QuestAnsw/fcousOnQuestion/{id}                   QuestAnsw.fcousOnQuestion
+POST /QuestAnsw/addComent                              QuestAnsw.addComent
+GET  /QuestAnsw/SearchAnswNum                          QuestAnsw.SearchAnswNum
+GET  /QuestAnsw/searchSchool                           QuestAnsw.searchSchool 
+
+
+# Ignore favicon requests
+GET     /favicon.ico                            404
+ 
+# Map static resources from the /app/public folder to the /public path
+GET     /public/                                staticDir:public
+
+# Catch all
+*       /{controller}/{action}                  {controller}.{action}
+

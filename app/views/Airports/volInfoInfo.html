@@ -1,0 +1,43 @@
+#{extends 'main.html' /}
+#{set title:'volInfoInfo.html' /}
+
+<style type="text/css">
+	table.tableizer-table {
+	border: 1px solid #CCC; font-family: Arial, Helvetica, sans-serif
+	font-size: 12px;
+} 
+.tableizer-table td {
+	padding: 4px;
+	margin: 3px;
+	border: 1px solid #ccc;
+}
+.tableizer-table th {
+	background-color: #104E8B; 
+	color: #FFF;
+	font-weight: bold;
+}
+</style>
+<table class="tableizer-table">
+	<tr class="tableizer-firstrow">
+		<th>姓名</th>
+		<th>性别</th>
+		<th>电话</th>
+		<th>Email</th>
+		<th>学校</th>
+		<th>车型</th>
+		<th>可接机时间</th>
+		<th style="width:150px;">备忘</th>
+	</tr>
+	#{list items:vol,as:'volInfo'}
+ 	<tr>
+ 		<td>${volInfo.name}</td>
+ 		<td>${volInfo.gender}</td>
+ 		<td>${volInfo.phone}</td>
+ 		<td>${volInfo.email}</td>
+ 		<td>${volInfo.school}</td>
+ 		<td>${volInfo.car}</td>
+ 		<td>${volInfo.date}</td>
+ 		<td style="width:150px;">${volInfo.remarks}</td>
+ 	</tr>
+ 	#{/list}
+</table>

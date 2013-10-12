@@ -1,0 +1,8 @@
+#{extends 'main.html' /}
+#{set title:'show.html' /}
+
+<div>
+<a href="@{CSSAs.changePassword(user.id)}">更改密码</a>
+<a href="@{CSSAs.updateProfile(user.id)}">更新资料</a>
+<a href="@{CSSAs.ChangeEmail(user.id)}">更改邮箱</a>
+</div>

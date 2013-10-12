@@ -1,0 +1,183 @@
+#{set title:'puUser.html' /} #{extends 'main.html' /}
+
+<!--这里是内容-->
+<div class="opporcontent">
+	<form id="puUser" action="@{Pickup.presentStudentInfo}" method="POST">
+		<div style="margin-top: 30px; margin-left: 50px;">
+			<div style="padding-top: 10px;">
+				<h1>
+					<a class="pfc"> 接机服务</a>
+				</h1>
+			</div>
+			<div style="padding-top: 20px;">
+				<span><a>hi,</a><a class="pfc"> 刘纯阳</a><a>,请如实填写以下内容。</a></span>
+			</div>
+			<div style="text-indent: 2em; width: 895px;">
+				<a class="pfc"> 非常感谢您的帮助！ 请留下您的基本信息和联系方式，我们会在需要时与您联系，
+					确认接机事宜。我们也会根据时间安排将您留下的联系方式发给需 要帮助的新同学或学者， 他们会与您主动联系，商量具体事宜以及费用。
+					接机注册表格中已注明强烈建议需要接机的同学为志愿者承担油费，具体费用请双方商议。 </a>
+			</div>
+		</div>
+
+
+		<div class="pick-inpu">
+			<div class="pick-inpu-border" style="padding-bottom: 20px;">
+				<div class="fl malf">
+					<label><b>姓名</b></label>
+				</div>
+				<div class="fl malfinput">
+					<input type="text" class="pick-inpu-text" placeholder="请输入真实姓名"
+						name="l.name" value="${flash.pkUsername}" id="pkUsername"
+						maxlength="12">
+				</div>
+
+				<div class="fl malffont">
+					<label><a style="color: #FF0000;">*</a><a class="pfcolor">(如果可能的话请填写中文)</a></label>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="pick-inpu">
+			<div class="pick-inpu-border" style="padding-bottom: 20px;">
+				<div class="fl malf">
+					<label><b>性别</b></label>
+				</div>
+				<div class="fl malfinput" style="width: 140px;">
+					<div class="sexdiv" style="float: left;">
+						<a class="sexnan" style="text-decoration: none;">男</a> <input
+							type="radio" class="checkboxnan" name="l.gender" id="pkSex"
+							value="男" ${flash.gender=="男"?"checked":""}>
+					</div>
+
+					<div class="sexdiv" style="float: right;">
+						<a class="sexnan" style="text-decoration: none;">女</a><input
+							type="radio" class="checkboxnan" id="pkSex" name="l.gender"
+							value="女" ${flash.gender=="女" ? "checked":""}>
+					</div>
+
+
+				</div>
+			</div>
+		</div>
+
+
+		<div class="pick-inpu">
+			<div class="pick-inpu-border" style="padding-bottom: 20px;">
+				<div class="fl malf">
+					<label><b>电话</b></label>
+				</div>
+				<div class="fl malfinput">
+					<input type="text" class="pick-inpu-text" id="pkTelphone"
+						name="l.phone" value="${flash.pkTelphone}"
+						placeholder="请输入电话号码" maxlength="10">
+				</div>
+
+				<div class="fl malffont">
+					<label><a style="color: #FF0000;">*</a><a class="pfcolor">(请输入您的电话)</a></label>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="pick-inpu">
+			<div class="pick-inpu-border" style="padding-bottom: 20px;">
+				<div class="fl malf">
+					<label><b>Email</b></label>
+				</div>
+				<div class="fl malfinput">
+					<input type="text" class="pick-inpu-text" id="pkEmail" type="text"
+						value="${flash.pkEmail}" name="l.email" placeholder="请输入邮箱"
+						maxlength="36">
+				</div>
+
+				<div class="fl malffont">
+					<label><a style="color: #FF0000;">*</a><a class="pfcolor">(请输入您的邮箱)</a></label>
+				</div>
+			</div>
+		</div>
+
+
+
+		<div class="pick-inpu">
+			<div class="pick-inpu-border"
+				style="padding-bottom: 20px; height: 80px;">
+				<div class="fl malf">
+					<label><b>车型</b></label>
+				</div>
+				<div class="fl malfinput" style="width: 400px;">
+					<input type="text" class="pick-inpu-text" id="pkCar" type="text"
+						name="l.car" value="${flash.pkCar}" placeholder="请填写车型"
+						maxlength="32">
+				</div>
+				<div class="fl malffont" style="width: 480px; margin-left: 145px;">
+					<label><a style="color: #FF0000;">*</a><a class="pfcolor">(请务必表明车的大小，
+							例如SUV, SEDAN，范例 Honda Accord Sedan。
+							我们会通过车型大小为你安排单次接机可接人数。原则是小车一人，大车两人) </a></label>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="pick-inpu">
+			<div class="pick-inpu-border" style="padding-bottom: 20px;">
+				<div class="fl malf">
+					<label><b>可接机时间</b></label>
+				</div>
+				<div class="fl malfinput">
+					<input type="text" class="pick-inpu-text" id="pkDate" name="l.date"
+						value="${flash.pkDate}" placeholder="非常重要！请详细填写" maxlength="360">
+				</div>
+
+				<div class="fl malffont">
+					<label><a style="color: #FF0000;">*</a><a class="pfcolor">(范例：9月2日之前，周日上午除外，周五周六晚上除外)</a></label>
+				</div>
+			</div>
+		</div>
+
+		<div class="pick-inpu">
+			<div class="pick-inpu-border"
+				style="padding-bottom: 20px; height: 60px;">
+				<div class="fl malf">
+					<label><b>备忘</b></label>
+				</div>
+				<div class="fl malfinput">
+					<textarea type="text" class="pick-inpu-tarea" rows="5"
+						name="l.remark" id="pkCheat" value="${flash.pkCheat}">
+								</textarea>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="pick-inpu">
+			<div class="pick-inpu-border" style="padding-bottom: 20px;">
+				<div style="margin-left: 50px; width: 500px;">
+					<label><a class="pfc">再次感谢您的热心帮忙！
+							<p>任何关于接机方面的问题， 请发送邮件至cssauclanewstudentarrive@gmail.com</p>
+					</a> </label>
+				</div>
+
+
+				<div class="fl malfinput"
+					style="width: 280px; margin-left: 150px; padding-top: 15px;">
+					<div class="sexdiv"
+						style="float: left; width: 120px; height: 40px;">
+						<input type="submit" class="" style="width: 120px; height: 40px;"
+							value="提交" id="userSub" onClick="checkInfor()">
+					</div>
+
+					<div class="sexdiv"
+						style="float: right; width: 120px; height: 40px;">
+						<input type="reset" style="width: 120px; height: 40px;" value="重置"
+							onClick="pickUpReset()">
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</form>
+
+</div>
+
+
